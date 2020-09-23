@@ -81,8 +81,8 @@
         <form name="sentMessage" id="contactForm" novalidate> <!--ここからform部分-->
           <div class="control-group"> <!--クラスの役割がわからない-->
             <div class="form-group floating-label-form-group controls">
-              <label>Name</label>
-              <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+              <label>Article Title</label>
+              <input type="text" class="form-control" placeholder="Article Title" id="name" required data-validation-required-message="Please enter your name.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
