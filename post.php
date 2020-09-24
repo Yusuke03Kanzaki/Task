@@ -1,3 +1,20 @@
+<?php
+
+//データベースに接続
+$link = mysqli_connect('127.0.0.1', 'root', 'root', 'Task');
+// print_r($link);
+// var_dump($link);
+if (!$link) {
+    die('データベースに接続できません：' . mysqli_error($link). PHP_EOL) ;
+}
+
+//データベースを選択する
+mysqli_select_db($link, 'Task');
+
+//エラーを格納する$errorsを初期化
+$errors = [];
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
