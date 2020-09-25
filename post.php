@@ -13,10 +13,12 @@ mysqli_select_db($link, 'Task');
 
 //エラーを格納する$errorsを初期化
 $errors = [];
-
+var_dump($_SERVER['REQUEST_METHOD']);
 //POSTなら保存処理実行。ページにアクセスする際はGETメソッドなのでfalse
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされた際のメソッドを調べる
-  // 名前が正しく入力されているかチェック
+//   // 名前が正しく入力されているかチェック
+  // var_dump($_SERVER['REQUEST_METHOD']); 
+  echo 11111;
   $name = null;
   // var_dump($_POST['name']);
   // var_dump(!isset($_POST['name']));
@@ -40,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
 
   //エラーがなければ保存
   if (count($errors) === 0) {
-    // echo 'aaaaa';
+    echo 'aaaaa';
     //保存するためのSQL文を作成
     echo $sql = "INSERT INTO post (name, comment, created_at) VALUES ('"
     . mysqli_real_escape_string($link, $name) . "','"
@@ -57,8 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
   }
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
         <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
         <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
         <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-        <form name="sentMessage" id="contactForm" novalidate> <!--ここからform部分-->
+       <form action="post.php" method="post" name="sentMessage" id="contactForm" novalidate> <!-- ここからform部分 -->
           <div class="control-group"> <!--クラスの役割がわからない-->
             <div class="form-group floating-label-form-group controls">
               <label>Article Title</label>
@@ -173,6 +173,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
           <div id="success"></div>
           <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
         </form>
+        <form action="post.php" method="post">  <!--actionは送信先のURI-->
+        名前: <input type="text" name='name'/><br>
+        ひとこと: <input type="text" name="comment" size="60"/><br>  <!--sizeは文字数-->
+        <input type="submit" name="submit" value="送信">  <!--submitで送信。bbs.phpにアクセス-->
+    </form>
       </div>
     </div>
   </div>
@@ -230,4 +235,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
 </body>
 
 </html>
-?>
