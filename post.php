@@ -171,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
           </div>
           <br>
           <div id="success"></div>
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">SEND</button>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">SEND</button> 
           <!-- <?php echo 22222; ?> -->
         </form>
         <form action="post.php" method="post">  <!--actionは送信先のURI-->
@@ -233,7 +233,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
 
   <!-- Contact Form JavaScript -->
   <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
+  <!-- <script src="js/contact_me.js"></script> -->  <!--これを消せばSENDをくりっした時にPOSTメソッドが送られる-->
 
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
