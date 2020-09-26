@@ -179,6 +179,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
           ひとこと: <input type="text" name="comment" size="60"/><br>  <!--sizeは文字数-->
           <input type="submit" name="submit" value="送信">  <!--submitで送信post.phpにアクセス-->
         </form>
+        <form action="post.php" method="POST">
+          <input type="text">
+          <input type="submit">
+        </form>
         <form>
       </div>
     </div>
