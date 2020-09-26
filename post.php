@@ -177,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
         <form action="post.php" method="post">  <!--actionは送信先のURI-->
           名前: <input type="text" name='name'/><br>
           ひとこと: <input type="text" name="comment" size="60"/><br>  <!--sizeは文字数-->
-          <input type="submit" name="submit" value="送信">  <!--submitで送信。bbs.phpにアクセス-->
+          <input type="submit" name="submit" value="送信">  <!--submitで送信post.phpにアクセス-->
         </form>
         <form>
       </div>
