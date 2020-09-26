@@ -18,7 +18,7 @@ var_dump($_SERVER['REQUEST_METHOD']);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされた際のメソッドを調べる
 //   // 名前が正しく入力されているかチェック
   // var_dump($_SERVER['REQUEST_METHOD']); 
-  echo 11111;
+  // echo 11111;
   $name = null;
   // var_dump($_POST['name']);
   // var_dump(!isset($_POST['name']));
@@ -171,13 +171,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
           </div>
           <br>
           <div id="success"></div>
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">SEND</button>
+          <!-- <?php echo 22222; ?> -->
         </form>
         <form action="post.php" method="post">  <!--actionは送信先のURI-->
-        名前: <input type="text" name='name'/><br>
-        ひとこと: <input type="text" name="comment" size="60"/><br>  <!--sizeは文字数-->
-        <input type="submit" name="submit" value="送信">  <!--submitで送信。bbs.phpにアクセス-->
-    </form>
+          名前: <input type="text" name='name'/><br>
+          ひとこと: <input type="text" name="comment" size="60"/><br>  <!--sizeは文字数-->
+          <input type="submit" name="submit" value="送信">  <!--submitで送信。bbs.phpにアクセス-->
+        </form>
+        <form>
       </div>
     </div>
   </div>
