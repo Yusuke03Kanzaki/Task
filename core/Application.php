@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Application.
- *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
- */
 abstract class Application
 {
     protected $debug = false;
