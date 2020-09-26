@@ -76,12 +76,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
   <!-- Custom fonts for this template --> <!--わかんね-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template --> <!--フォントを指定してるっぽい-->
-  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="../css/clean-blog.min.css" rel="stylesheet">
 
 </head>
 
@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+  <header class="masthead" style="background-image: url('../img/post-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -172,16 +172,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
           <br>
           <div id="success"></div>
           <button type="submit" class="btn btn-primary" id="sendMessageButton">SEND</button> 
-          <!-- <?php echo 22222; ?> -->
-        </form>
-        <form action="post.php" method="post">  <!--actionは送信先のURI-->
-          名前: <input type="text" name='name'/><br>
-          ひとこと: <input type="text" name="comment" size="60"/><br>  <!--sizeは文字数-->
-          <input type="submit" name="submit" value="送信">  <!--submitで送信post.phpにアクセス-->
-        </form>
-        <form action="post.php" method="POST">
-          <input type="text">
-          <input type="submit">
         </form>
         <form>
       </div>
