@@ -9,7 +9,7 @@ class Router
      *
      * @param array $definitions
      */
-    public function __construct($definitions)
+    public function __construct($definitions)  //definitions　定義　
     {
         $this->routes = $this->compileRoutes($definitions);
     }
@@ -50,7 +50,7 @@ class Router
      */
     public function resolve($path_info)
     {
-        if ('/' !== substr($path_info, 0, 1)) {
+        if ('/' !== substr($path_info, 0, 1)) {  //substr関数で$path_infoの１文字目が’/’出なければ、$path_infoの頭に’/’をつける
             $path_info = '/' . $path_info;
         }
 
