@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Request.
- *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
- */
 class Request
 {
     /**
