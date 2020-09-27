@@ -1,10 +1,5 @@
 <?php
 
-/**
- * AccountController.
- *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
- */
 class AccountController extends Controller
 {
     protected $auth_actions = array('index', 'signout', 'follow');
