@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Controller.
- *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
- */
 abstract class Controller
 {
     protected $controller_name;
