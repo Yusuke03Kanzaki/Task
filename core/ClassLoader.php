@@ -33,7 +33,7 @@ class ClassLoader
             // var_dump($this->dirs);
             $file = $dir . '/' . $class . '.php';
             // var_dump($file);
-            print_r($file. PHP_EOL);
+            // print_r($file. PHP_EOL);
             if (is_readable($file)) {
                 require $file;
 

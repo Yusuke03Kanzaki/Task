@@ -1,13 +1,8 @@
 <?php
 
-/**
- * StatusRepository.
- *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
- */
 class StatusRepository extends DbRepository
 {
-    public function insert($user_id, $body)
+    public function insert($user_id, $body)  //ユーザーidと投稿内容を引数として受け取る
     {
         $now = new DateTime();
 

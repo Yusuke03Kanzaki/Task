@@ -1,10 +1,5 @@
 <?php
 
-/**
- * StatusController.
- *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
- */
 class StatusController extends Controller
 {
     protected $auth_actions = array('index', 'post');
