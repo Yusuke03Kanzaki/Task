@@ -18,7 +18,7 @@ class StatusRepository extends DbRepository
         ));
     }
 
-    public function fetchAllPersonalArchivesByUserId($user_id)
+    public function fetchAllPersonalArchivesByUserId($user_id)  //ログインしているユーザーの情報を取得する
     {
         $sql = "
             SELECT a.*, u.user_name
