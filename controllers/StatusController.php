@@ -15,6 +15,8 @@ class StatusController extends Controller
             'body'     => '',
             '_token'   => $this->generateCsrfToken('status/post'),
         ));
+        // echo 2222;
+        // require_once 'views/top.php';
     }
 
     public function postAction()

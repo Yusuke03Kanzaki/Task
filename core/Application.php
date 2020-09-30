@@ -162,7 +162,7 @@ abstract class Application
     }
 
     /**
-     * アプリケーションを実行する
+     * アプリケーションを実行する。Routerからコントローラーを特定しレスポンスの送信を行う
      *
      * @throws HttpNotFoundException ルートが見つからない場合
      */
@@ -170,7 +170,7 @@ abstract class Application
     {
         try {
             $params = $this->router->resolve($this->request->getPathInfo());
-            var_dump($this->request->getPathInfo());
+            //var_dump($this->request->getPathInfo());
             // $params = false;
             if ($params === false) {
                 throw new HttpNotFoundException('No route found for ' . $this->request->getPathInfo());
@@ -188,6 +188,7 @@ abstract class Application
             list($controller, $action) = $this->login_action;
             $this->runAction($controller, $action);
         }
+        // echo 11111;
 
         $this->response->send();
     }

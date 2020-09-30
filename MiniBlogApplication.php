@@ -14,7 +14,7 @@ class MiniBlogApplication extends Application
     {
         return array(
             '/'
-                => array('controller' => 'status', 'action' => 'index'),
+               => array('controller' => 'status', 'action' => 'index'),
             '/status/post'
                 => array('controller' => 'status', 'action' => 'post'),
             '/user/:user_name'
@@ -27,8 +27,8 @@ class MiniBlogApplication extends Application
                 => array('controller' => 'account'),
             '/follow'
                 => array('controller' => 'account', 'action' => 'follow'),
-            '/xxx'
-                => array('controller' => 'post', 'action' => 'foll'),
+            // '/xxx'
+            //     => array('controller' => 'post', 'action' => 'foll'),
         );
     }
 
