@@ -86,7 +86,7 @@ class Request
     }
 
     /**
-     * ベースURLを取得
+     * ベースURLを取得。PPHP221p。http://example.com/foo/bar/index.php/list index.php(フロントコントローラー)よりも前。ドメイン(~.com)よりも後ろ
      *
      * @return string
      */

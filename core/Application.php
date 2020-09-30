@@ -169,7 +169,7 @@ abstract class Application
     public function run()
     {
         try {
-            $params = $this->router->resolve($this->request->getPathInfo());
+            $params = $this->router->resolve($this->request->getPathInfo());  //ルーティングパラメーターを取得
             //var_dump($this->request->getPathInfo());
             // $params = false;
             if ($params === false) {
