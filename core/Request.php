@@ -76,13 +76,14 @@ class Request
     }
 
     /**
-     * リクエストURIを取得
+     * リクエストURIを取得。リクエストされたURLの情報が$_SERVER['REQUEST_URI']に格納されている。
      *
      * @return string
      */
     public function getRequestUri()
     {
-        return $_SERVER['REQUEST_URI'];
+        // var_dump($_SERVER['REQUEST_URI']);  //  /task/web/
+        return $_SERVER['REQUEST_URI'];  //ページにアクセスする際に指定されたURI（ドメイン以下のパス）末尾に / が付いているのは実際には一番後ろにフロントコントローラー(index.php)があるため？
     }
 
     /**
@@ -92,9 +93,8 @@ class Request
      */
     public function getBaseUrl()
     {
-        $script_name = $_SERVER['SCRIPT_NAME'];
-        // var_dump($script_name);
-
+        $script_name = $_SERVER['SCRIPT_NAME'];  //現在実行されているスクリプトのパス  
+        // var_dump($script_name);  //  /task/web/index.php
         $request_uri = $this->getRequestUri();
         // var_dump($request_uri);
         // var_dump(dirname($script_name));
