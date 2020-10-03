@@ -57,6 +57,7 @@ class View
                 )
             ));
         }
+        // print_r($content);
 
         return $content;
     }

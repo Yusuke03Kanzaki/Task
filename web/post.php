@@ -13,7 +13,7 @@ mysqli_select_db($link, 'Task');
 
 //エラーを格納する$errorsを初期化
 $errors = [];
-var_dump($_SERVER['REQUEST_METHOD']);
+// var_dump($_SERVER['REQUEST_METHOD']);
 //POSTなら保存処理実行。ページにアクセスする際はGETメソッドなのでfalse
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされた際のメソッドを調べる
 //   // 名前が正しく入力されているかチェック
