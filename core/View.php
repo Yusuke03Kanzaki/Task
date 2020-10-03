@@ -30,14 +30,14 @@ class View
     }
 
     /**
-     * ビューファイルをレンダリング
+     * ビューファイルをレンダリング。ビューファイルの読み込みを行う  PPHP248p
      *
-     * @param string $_path
-     * @param array $_variables
-     * @param mixed $_layout
+     * @param string $_path  ビューファイルへのパス
+     * @param array $_variables  ビューファイルに渡す変数
+     * @param mixed $_layout  レイアウトファイル名の指定
      * @return string
      */
-    public function render($_path, $_variables = array(), $_layout = false)
+    public function render($_path, $_variables = array(), $_layout = false) 
     {
         $_file = $this->base_dir . '/' . $_path . '.php';
 
