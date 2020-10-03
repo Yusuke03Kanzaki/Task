@@ -34,7 +34,7 @@ class View
      *
      * @param string $_path  ビューファイルへのパス
      * @param array $_variables  ビューファイルに渡す変数
-     * @param mixed $_layout  レイアウトファイル名の指定
+     * @param mixed $_layout  レイアウトファイル名の指定。指定が必要なのはControllerクラスが読み出された際だけ。falseの場合レイアウトの読み込みをしない
      * @return string
      */
     public function render($_path, $_variables = array(), $_layout = false) 
