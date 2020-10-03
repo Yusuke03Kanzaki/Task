@@ -170,7 +170,6 @@ abstract class Application
     {
         try {
             $params = $this->router->resolve($this->request->getPathInfo());  //ルーティングパラメーターを取得
-            // var_dump($this->request->getPathInfo());  //  /が表示される
             // print_r($this->request->getPathInfo().PHP_EOL);
             // print_r($this->router->resolve($this->request->getPathInfo()));
             // $params = false;
@@ -209,6 +208,7 @@ abstract class Application
     public function runAction($controller_name, $action, $params = array())
     {
         // var_dump($controller_name, $action, $params);
+        // print_r($controller_name, $action, $params = array());
         $controller_class = ucfirst($controller_name) . 'Controller';
         // var_dump($controller_class);
 
