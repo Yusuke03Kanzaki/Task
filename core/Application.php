@@ -170,13 +170,17 @@ abstract class Application
     {
         try {
             $params = $this->router->resolve($this->request->getPathInfo());  //ルーティングパラメーターを取得
-            //var_dump($this->request->getPathInfo());
+            // var_dump($this->request->getPathInfo());  //  /が表示される
+            // print_r($this->request->getPathInfo().PHP_EOL);
+            // print_r($this->router->resolve($this->request->getPathInfo()));
             // $params = false;
             if ($params === false) {
                 throw new HttpNotFoundException('No route found for ' . $this->request->getPathInfo());
             }
             
-            $controller = $params['controller'];
+            // print_r($params);
+            // var_dump($params);
+            $controller = $params['controller']; 
             // var_dump($controller);
             $action = $params['action'];
             // var_dump($action);

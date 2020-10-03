@@ -94,7 +94,7 @@ class Request
     public function getBaseUrl()
     {
         $script_name = $_SERVER['SCRIPT_NAME'];  //現在実行されているスクリプトのパス  
-        // var_dump($script_name);  //  /task/web/index.php
+        print_r($script_name. PHP_EOL);  //  /task/web/index.php
         $request_uri = $this->getRequestUri();
         // var_dump($request_uri);
         // var_dump(dirname($script_name));
