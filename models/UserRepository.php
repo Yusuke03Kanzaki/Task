@@ -1,10 +1,5 @@
 <?php
 
-/**
- * UserRepository.
- *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
- */
 class UserRepository extends DbRepository
 {
     public function insert($user_name, $password)
