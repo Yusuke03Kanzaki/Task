@@ -2,7 +2,7 @@
  
 class View
 {
-    protected $base_dir;
+    protected $base_dir;  //  /Applications/MAMP/htdocs/task/views　常にこれ？
     protected $defaults;
     protected $layout_variables = array();
 
@@ -42,6 +42,7 @@ class View
         // print_r($_path);
         // var_dump($_path);
         $_file = $this->base_dir . '/' . $_path . '.php';
+        // print_r($this->base_dir);  //  /Applications/MAMP/htdocs/task/views　常にこれ？
 
         extract(array_merge($this->defaults, $_variables));
 
