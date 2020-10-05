@@ -2,7 +2,7 @@
 
 class Router
 {
-    protected $routes;
+    protected $routes; //compileRoutesメソッドで内部用に変換されたルーティングが入っている
 
     /**
      * コンストラクタ
@@ -11,6 +11,7 @@ class Router
      */
     public function __construct($definitions)  //definitions　定義　
     {
+        // print_r($definitions);  //MiniBlogApplicationのルーティングが入っている
         $this->routes = $this->compileRoutes($definitions);
     }
 

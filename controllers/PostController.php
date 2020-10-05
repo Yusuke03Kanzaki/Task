@@ -6,11 +6,10 @@ class PostController extends Controller
 
     public function indexAction()
     {
-        $user = $this->session->get('user');
+        $user = $this->session->get('user');  //NULL　ユーザー情報を取得するらしいが、何のためにあるの？
         $statuses = $this->db_manager->get('Status');
             // ->fetchAllPersonalArchivesByUserId($user['id']);  //エラーが出てheaderが消えてしまう
         // print_r($statuses);
-        // var_dump($statuses);
 
         return $this->render(array(
             'statuses' => $statuses,
@@ -22,7 +21,7 @@ class PostController extends Controller
     public function aboutAction()
     {
         // $user = $this->session->get('user');
-        // $statuses = $this->db_manager->get('Status');
+        $statuses = $this->db_manager->get('Status');
             // ->fetchAllPersonalArchivesByUserId($user['id']);  //エラーが出てheaderが消えてしまう
         // print_r($statuses);
         // var_dump($statuses);

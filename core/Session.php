@@ -37,6 +37,10 @@ class Session
      */
     public function get($name, $default = null)
     {
+        // print_r(isset($_SESSION[$name]));
+        print_r($_SESSION[$name]);
+        // var_dump($_SESSION[$name]);
+        // var_dump(isset($_SESSION[$name]));
         if (isset($_SESSION[$name])) {
             return $_SESSION[$name];
         }
