@@ -42,6 +42,8 @@ class View
         // print_r($_path);
         // var_dump($_path);
         $_file = $this->base_dir . '/' . $_path . '.php';
+        // echo 1111;
+        // print_r($_file);
         // print_r($this->base_dir);  //  /Applications/MAMP/htdocs/task/views　常にこれ？
         // print_r($_path);
 

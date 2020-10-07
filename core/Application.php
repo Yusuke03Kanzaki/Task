@@ -170,6 +170,8 @@ abstract class Application
     {
         try {
             $params = $this->router->resolve($this->request->getPathInfo());  //ルーティングパラメーターを取得
+            // echo 111;
+            // print_r($params);
             // print_r($this->request->getPathInfo().PHP_EOL);
             // print_r($this->router->resolve($this->request->getPathInfo()));
             // $params = false;
