@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
 
   //エラーがなければ保存
   if (count($errors) === 0) {
-    echo 'aaaaa';
+    // echo 'aaaaa';
     //保存するためのSQL文を作成
     echo $sql = "INSERT INTO post (name, comment, created_at) VALUES ('"
     . mysqli_real_escape_string($link, $name) . "','"

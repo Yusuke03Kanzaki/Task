@@ -49,17 +49,27 @@ class Router
      * @param string $path_info
      * @return array|false
      */
-    public function resolve($path_info)
+    public function resolve($path_info) //  /about.php
     {
         if ('/' !== substr($path_info, 0, 1)) {  //substr関数で$path_infoの１文字目が’/’出なければ、$path_infoの頭に’/’をつける
             $path_info = '/' . $path_info;
         }
+        // print_r($path_info);
+        // print_r($this->routes);  
+        $path_info = str_replace('.php', '', $path_info);
+        // var_dump($path_info);
 
         foreach ($this->routes as $pattern => $params) {
+            // echo 111;
+            // var_dump($pattern);
+            // print_r($params);
+            // var_dump(preg_match('#^' . $pattern . '$#', $path_info, $matches));
             if (preg_match('#^' . $pattern . '$#', $path_info, $matches)) {
+                // echo 111;
                 // var_dump($matches);
                 // var_dump($params);
                 $params = array_merge($params, $matches); 
+                // echo 111;
                 // var_dump($params);
 
                 return $params;

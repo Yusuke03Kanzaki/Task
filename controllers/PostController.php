@@ -6,7 +6,7 @@ class PostController extends Controller
 
     public function indexAction()
     {
-        echo 111;
+        // echo 111;
         $user = $this->session->get('user');  //NULL　ユーザー情報を取得するらしいが、何のためにあるの？
         // print_r($user);
         $statuses = $this->db_manager->get('Status')

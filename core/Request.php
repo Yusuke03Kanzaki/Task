@@ -116,16 +116,18 @@ class Request
     public function getPathInfo()
     {
         $base_url = $this->getBaseUrl();
-        // var_dump($base_url);
+        // print_r($base_url);
         $request_uri = $this->getRequestUri();
-        // var_dump($request_uri);
+        // print_r($request_uri);
 
-        // var_dump($pos = strpos($request_uri, 'i'));
+        // var_dump($pos = strpos($request_uri, '?'));
         if (false !== ($pos = strpos($request_uri, '?'))) {
+            // echo 111;
             $request_uri = substr($request_uri, 0, $pos);
             // var_dump($request_uri);
         }
 
+        // echo 111;
         // var_dump(strlen($base_url));
         // var_dump(strlen($request_uri));
 
