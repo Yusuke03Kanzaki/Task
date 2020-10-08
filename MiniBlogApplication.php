@@ -15,8 +15,10 @@ class MiniBlogApplication extends Application
         return array(
             '/'
                 =>array('controller' => 'post', 'action' => 'index'),
-            '/about'
+            '/post/about'
                 =>array('controller' => 'post', 'action' => 'about'),
+            '/post/sample'
+                =>array('controller' => 'post', 'action' => 'sample'),
             '/status/post'
                 => array('controller' => 'status', 'action' => 'post'),
             '/user/:user_name'

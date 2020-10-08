@@ -1,5 +1,5 @@
 <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../img/about-bg.jpg')">
+  <header class="masthead" style="background-image: url('../../img/about-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -24,14 +24,12 @@
     </div>
   </div>
 
-  <hr>
-
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="http://localhost/task/vendor/jquery/jquery.min.js"></script>
+  <script src="http://localhost/task/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/clean-blog.min.js"></script>
+  <script src="http://localhost/task/js/clean-blog.min.js"></script>
 
 </body>
 
