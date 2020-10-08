@@ -20,15 +20,15 @@ class PostRepository extends DbRepository
     //  レコードの新規作成を行う
     //  $user_name  ユーザーID
     //  $password  パスワード
-    public function insert($user_name, $password)  
+    public function insert($user_name/*, $password*/)  
     {
-        $password = $this->hashPassword($password);
+        // $password = $this->hashPassword($password);
         $now = new DateTime();
 
         $sql = "
-            INSERT INTO user(user_name, password, created_at)
-                VALUES(:user_name, :password, :created_at)
-        ";
+            INSERT INTO post(user_name, created_at)
+                VALUES(:user_name, :created_at)  
+        ";  // password, INSERT INTO post無いから削除。:password, VALUES無いから削除
 
         $stmt = $this->execute($sql, array(
             ':user_name'  => $user_name,
