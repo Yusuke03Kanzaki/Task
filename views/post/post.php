@@ -6,7 +6,7 @@ $link = mysqli_connect('127.0.0.1', 'root', 'root', 'Task');
 // var_dump($link);
 if (!$link) {
     die('データベースに接続できません：' . mysqli_error($link). PHP_EOL) ;
-}
+} 
 
 //データベースを選択する
 mysqli_select_db($link, 'Task');
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  //ページにアクセスされ�
 }
 ?>
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../img/post-bg.jpg')">
+  <header class="masthead" style="background-image: url('http://localhost/task/img/post-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">

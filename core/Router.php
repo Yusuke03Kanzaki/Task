@@ -71,7 +71,7 @@ class Router
                 // var_dump($params);
                 $params = array_merge($params, $matches); 
                 // echo 111;
-                print_r($params);
+                // print_r($params);
 
                 return $params;
             }
