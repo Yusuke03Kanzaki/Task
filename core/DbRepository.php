@@ -1,5 +1,10 @@
 <?php
 
+/*  DbRepository クラスはデータベースへのアクセスを行うクラスで、テーブルごとに DbRepository クラスの子クラスを作成するようにします。
+各 Repository クラスには、たとえば user テーブルであれば UserRepository クラスを定義し、user テーブルへレコードの新規作成を行う insert() メソッドや id というカラムを元にデータを取得する fetchById() メソッドなどを必要に合わせて作成していくことを想定しています。
+それぞれのメソッドの内部では SQL を実行することになりますが、SQL の実行時に頻繁に出てく るような処理を DbRepository に抽象化しておきます。
+*/
+
 abstract class DbRepository
 {
     protected $con;
