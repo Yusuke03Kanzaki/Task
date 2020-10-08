@@ -21,8 +21,8 @@ class MiniBlogApplication extends Application
                 =>array('controller' => 'post', 'action' => 'sample'),
             '/post/contact'
                 =>array('controller' => 'post', 'action' => 'contact'),
-            '/post/post'
-                =>array('controller' => 'post', 'action' => 'post'),
+            '/post/post_index'
+                =>array('controller' => 'post', 'action' => 'post_index'),
             // '/status/post'
             //     => array('controller' => 'status', 'action' => 'post'),
             // '/user/:user_name'

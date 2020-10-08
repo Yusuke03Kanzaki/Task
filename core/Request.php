@@ -9,9 +9,12 @@ class Request
      */
     public function isPost()
     {
+        print_r($_SERVER['REQUEST_METHOD']);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            return true;
+            echo 111;
+            // return true;
         }
+        // echo 111;
 
         return false;
     }

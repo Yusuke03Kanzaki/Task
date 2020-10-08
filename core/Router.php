@@ -51,14 +51,13 @@ class Router
      */
     public function resolve($path_info) //  /about.php
     {
-        // var_dump($path_info);
+        // print_r($path_info);
         if ('/' !== substr($path_info, 0, 1)) {  //substr関数で$path_infoの１文字目が’/’出なければ、$path_infoの頭に’/’をつける
             $path_info = '/' . $path_info;
         }
         // print_r($path_info);
         // print_r($this->routes);  
         // $path_info = str_replace('.php', '', $path_info);  // .phpを削除
-        // var_dump($path_info);
 
         foreach ($this->routes as $pattern => $params) {
             // echo 111;

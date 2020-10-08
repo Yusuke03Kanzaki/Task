@@ -47,7 +47,7 @@
             <a class="nav-link" href="<?php echo $base_url; ?>/post/contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo $base_url; ?>/post/post">Post</a> <!--リンク先でで投稿処理をする-->
+            <a class="nav-link" href="<?php echo $base_url; ?>/post/post_index">Post</a> <!--リンク先でで投稿処理をする-->
           </li>
         </ul>
       </div>

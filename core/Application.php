@@ -175,7 +175,6 @@ abstract class Application
             // print_r($params);
             // print_r($this->request->getPathInfo().PHP_EOL);
             // print_r($this->router->resolve($this->request->getPathInfo()));
-            // $params = false;
             if ($params === false) {
                 throw new HttpNotFoundException('No route found for ' . $this->request->getPathInfo());
             }
