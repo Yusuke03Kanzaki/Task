@@ -141,7 +141,7 @@ abstract class Controller
     }
 
     /**
-     * CSRFトークンが妥当かチェック
+     * CSRFトークンが妥当かチェック。トークンはリクエストされた際に POST パラメータとして送信されます。セッション上に格納され ているトークンから POST されたトークンを探すのが checkCsrfToken() メソッドです。
      *
      * @param string $form_name
      * @param string $token
@@ -155,9 +155,11 @@ abstract class Controller
         if (false !== ($pos = array_search($token, $tokens, true))) {
             unset($tokens[$pos]);
             $this->session->set($key, $tokens);
+            // echo 111;
 
             return true;
         }
+        // echo 111;
 
         return false;
     }

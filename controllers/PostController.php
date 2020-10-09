@@ -4,7 +4,7 @@ class PostController extends Controller
 {
     // protected $auth_actions = array('index', 'signout', 'follow');
 
-    public function indexAction()
+    function indexAction()
     {
         // echo 111;
         $user = $this->session->get('user');  
@@ -20,7 +20,7 @@ class PostController extends Controller
         ));
     }
 
-    public function aboutAction()
+    function aboutAction()
     {
         // echo 111;
         // $user = $this->session->get('user');
@@ -36,7 +36,7 @@ class PostController extends Controller
         ));
     }
 
-    public function sampleAction()
+    function sampleAction()
     {
         // echo 111;
         // $user = $this->session->get('user');
@@ -52,7 +52,7 @@ class PostController extends Controller
         ));
     }
 
-    public function contactAction()
+    function contactAction()
     {
         // echo 111;
         // $user = $this->session->get('user');
@@ -68,7 +68,7 @@ class PostController extends Controller
         ));
     }
 
-    public function post_indexAction()
+    function post_indexAction()
     {
         // echo 111;
         // $user = $this->session->get('user');
@@ -84,9 +84,9 @@ class PostController extends Controller
         ));
     }
 
-    public function postAction()
+    function postAction()
     {
-        // echo 111;
+        // echo 123456789;
 
         if (!$this->request->isPost()) {
             $this->forward404();
@@ -94,37 +94,51 @@ class PostController extends Controller
 
         // echo 111;
         $token = $this->request->getPost('_token');
-        if (!$this->checkCsrfToken('status/post', $token)) {
-            return $this->redirect('/');
+        // var_dump($token);        
+        if (!$this->checkCsrfToken('post/post', $token)) {  //$token = NULL
+            // return $this->redirect('/');
         }
 
-        $body = $this->request->getPost('body');
+        // $body = $this->request->getPost('body');
 
-        $errors = array();
+        // $errors = array();
 
-        if (!strlen($body)) {
-            $errors[] = 'ひとことを入力してください';
-        } else if (mb_strlen($body) > 200) {
-            $errors[] = 'ひとことは200 文字以内で入力してください';
-        }
+        // if (!strlen($body)) {
+        //     $errors[] = 'ひとことを入力してください';
+        // } else if (mb_strlen($body) > 200) {
+        //     $errors[] = 'ひとことは200 文字以内で入力してください';
+        // }
 
-        if (count($errors) === 0) {
-            $user = $this->session->get('user');
-            $this->db_manager->get('Status')->insert($user['id'], $body);
+        // if (count($errors) === 0) {
+        //     $user = $this->session->get('user');
+        //     $this->db_manager->get('Status')->insert($user['id'], $body);
 
-            return $this->redirect('/');
-        }
+        //     return $this->redirect('/');
+        // }
 
-        $user = $this->session->get('user');
-        $statuses = $this->db_manager->get('Status')
-            ->fetchAllPersonalArchivesByUserId($user['id']);
+        // $user = $this->session->get('user');
+        // $statuses = $this->db_manager->get('Status')
+        //     ->fetchAllPersonalArchivesByUserId($user['id']);
+        
+        // echo 12345;
 
-        return $this->render(array(
-            'errors'   => $errors,
-            'body'     => $body,
-            'statuses' => $statuses,
-            '_token'   => $this->generateCsrfToken('status/post'),
-        ), 'index');
+        // return $this->render(array(
+        //     'errors'   => $errors,
+        //     'body'     => $body,
+        //     'statuses' => $statuses,
+        //     '_token'   => $this->generateCsrfToken('status/post'),
+        // ), 'index');
+    }
+
+    function testAction()
+    {
+        // return $this->render(array(
+        //     //     // 'statuses' => $statuses,
+        //     //     'body'     => '',
+        //     //     '_token'   => $this->generateCsrfToken('status/post'),
+        //     ));
+
+        // echo 11111;
     }
 
 
