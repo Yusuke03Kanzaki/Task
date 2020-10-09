@@ -4,6 +4,6 @@ require '../bootstrap.php';
 require '../MiniBlogApplication.php';
 
 // echo  111;
-$app = new MiniBlogApplication(false);  //trueがデバックモード
+$app = new MiniBlogApplication(true);  //trueがデバックモード
 // echo 111;
 $app->run();

@@ -9,14 +9,14 @@ class PostController extends Controller
         // echo 111;
         $user = $this->session->get('user');  
         // print_r($user);
-        $statuses = $this->db_manager->get('Status')
-            ->fetchAllPersonalArchivesByUserId($user['id']);  //エラーが出てheaderが消えてしまう
+        // $statuses = $this->db_manager->get('Status')
+        //     ->fetchAllPersonalArchivesByUserId($user['id']);  //エラーが出てheaderが消えてしまう
         // print_r($statuses);
 
         return $this->render(array(
-            'statuses' => $statuses,
-            'body'     => '',
-            '_token'   => $this->generateCsrfToken('status/post'),
+        //     // 'statuses' => $statuses,
+        //     'body'     => '',
+        //     '_token'   => $this->generateCsrfToken('status/post'),
         ));
     }
 
@@ -86,7 +86,7 @@ class PostController extends Controller
 
     public function postAction()
     {
-        echo 111;
+        // echo 111;
 
         if (!$this->request->isPost()) {
             $this->forward404();
