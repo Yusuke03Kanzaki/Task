@@ -45,11 +45,11 @@ class Request
     public function getPost($name, $default = null)
     {
         // echo 111;
-        // print_r($_POST[$name]);
+        // var_dump($_POST[$name]);
         // var_dump(isset($_POST[$name]));
         // print_r($name);
         if (isset($_POST[$name])) {
-            echo 111;
+            // echo 111;
             return $_POST[$name];
         }
         // echo 222;
