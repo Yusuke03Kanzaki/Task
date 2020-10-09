@@ -133,8 +133,8 @@ class PostController extends Controller
             'errors'   => $errors,
             'body'     => $body,
             'statuses' => $statuses,
-            '_token'   => $this->generateCsrfToken('status/post'),
-        ), 'index');
+            '_token'   => $this->generateCsrfToken('post/post'),
+        )/*, 'index'*/);
     }
 
     function testAction()

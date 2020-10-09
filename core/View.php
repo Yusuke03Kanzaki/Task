@@ -43,7 +43,7 @@ class View
         // var_dump($_path);
         $_file = $this->base_dir . '/' . $_path . '.php';
         // echo 1;
-        print_r($_file);
+        // print_r($_file);
         // print_r($this->base_dir);  //  /Applications/MAMP/htdocs/task/views　常にこれ？
         // print_r($_path);
 
@@ -51,6 +51,11 @@ class View
 
         ob_start();
         ob_implicit_flush(0);
+
+        //  PostActionを実装したときにpost_index.phpを読み込みたい。そもそもpost.phpを用意していない
+        if ($_file === '/Applications/MAMP/htdocs/task/views/post/post.php') {
+            $_file = '/Applications/MAMP/htdocs/task/views/post/post_index.php';
+        }
 
         require $_file;
 

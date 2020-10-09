@@ -76,14 +76,20 @@ abstract class Controller
         );
         // print_r($this->request);
         // var_dump($this->request);
+        // var_dump($template);
 
         $view = new View($this->application->getViewDir(), $defaults);
 
+        // print_r($template);
         if (is_null($template)) {
             $template = $this->action_name;
+            // echo 111;
         }
+        // print_r($this->action_name);
+        // print_r($template);
 
         $path = $this->controller_name . '/' .$template;
+        // print_r($path);
 
         return $view->render($path, $variables, $layout);
     }
