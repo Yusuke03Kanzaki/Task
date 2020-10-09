@@ -82,7 +82,7 @@
         <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
         <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
         <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-       <form action="post.php" method="post" name="sentMessage" id="contactForm" novalidate> <!-- ここからform部分 -->
+       <form action="<?php echo $base_url; ?>/post/post" method="post" name="sentMessage" id="contactForm" novalidate> <!-- ここからform部分 -->
           <div class="control-group">  <!--名前-->
             <div class="form-group floating-label-form-group controls">
               <label>Name</label>

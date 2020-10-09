@@ -32,14 +32,14 @@ class PostRepository extends DbRepository
 
         $stmt = $this->execute($sql, array(
             ':user_name'  => $user_name,
-            ':password'   => $password,
+            // ':password'   => $password,
             ':created_at' => $now->format('Y-m-d H:i:s'),
         ));
     }
 
-    public function hashPassword($password)
-    {
-        return sha1($password . 'SecretKey');
-    }
+    // public function hashPassword($password)
+    // {
+    //     return sha1($password . 'SecretKey');
+    // }
 
 }

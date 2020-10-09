@@ -30,7 +30,7 @@ abstract class DbRepository
     }
 
     /**
-     * クエリを実行
+     * クエリを実行。DbRepositoryクラスのexecute()メソッドでは前述のプリペアドステートメントを実行し、 PDOStatement クラスのインスタンスを取得します。一連の流れを毎回呼び出すのは少々面倒なの で、1 つのメソッドで実行できるようにします。
      *
      * @param string $sql
      * @param array $params

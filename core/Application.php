@@ -222,6 +222,7 @@ abstract class Application
         }
 
         $content = $controller->run($action, $params);
+        // print_r($action);
 
         $this->response->setContent($content);
     }
