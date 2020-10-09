@@ -114,15 +114,22 @@ class PostController extends Controller
         // } else if (mb_strlen($body) > 200) {
         //     $errors[] = 'ひとことは200 文字以内で入力してください';
         // }
-        echo 111;
+        // echo 111;
 
         //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを StatusRepository クラスの insert() メソッドに渡して保存しています。
-        if (count($errors) === 0) {  
-            $user = $this->session->get('user');
-            $this->db_manager->get('Status')->insert($user['id'], $body);
+        // echo 111;
+        $user = $this->session->get('user');
+        $this->db_manager->get('Status')->insert($user['id'], $body);
 
-            return $this->redirect('/');
-        }
+        return $this->redirect('/');
+
+        // if (count($errors) === 0) {  
+        //     // echo 111;
+        //     $user = $this->session->get('user');
+        //     $this->db_manager->get('Status')->insert($user['id'], $body);
+
+        //     return $this->redirect('/');
+        // }
 
         // $user = $this->session->get('user');
         // $statuses = $this->db_manager->get('Status')

@@ -53,9 +53,9 @@ class View
         ob_implicit_flush(0);
 
         //  PostActionを実装したときにpost_index.phpを読み込みたい。そもそもpost.phpを用意していない
-        if ($_file === '/Applications/MAMP/htdocs/task/views/post/post.php') {
-            $_file = '/Applications/MAMP/htdocs/task/views/post/post_index.php';
-        }
+        // if ($_file === '/Applications/MAMP/htdocs/task/views/post/post.php') {
+        //     $_file = '/Applications/MAMP/htdocs/task/views/post/post_index.php';
+        // }
 
         require $_file;
 
