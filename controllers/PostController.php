@@ -119,6 +119,8 @@ class PostController extends Controller
         //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを StatusRepository クラスの insert() メソッドに渡して保存しています。
         // echo 111;
         $user = $this->session->get('user');
+        // print_r($user);
+        var_dump($user);
         $this->db_manager->get('Status')->insert($user['id'], $body);
 
         return $this->redirect('/');
