@@ -86,7 +86,7 @@ class PostController extends Controller
 
     public function postAction()
     {
-        // echo 111;
+        echo 111;
 
         if (!$this->request->isPost()) {
             $this->forward404();
