@@ -120,7 +120,7 @@ class PostController extends Controller
         // echo 111;
         $user = $this->session->get('user');
         // print_r($user);
-        var_dump($user);
+        // var_dump($user);
         $this->db_manager->get('Status')->insert($user['id'], $body);
 
         return $this->redirect('/');

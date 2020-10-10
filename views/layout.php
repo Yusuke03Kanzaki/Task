@@ -98,9 +98,13 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="  http://localhost/task/vendor/jquery/jquery.min.js 
+  <script src=" http://localhost/task/vendor/jquery/jquery.min.js 
 "></script>
   <script src="http://localhost/task/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="http://localhost/task/js/jqBootstrapValidation.js"></script>
+  <script src="http://localhost/task/js/contact_me.js"></script>
 
   <!-- Custom scripts for this template -->
   <script src="http://localhost/task/js/clean-blog.min.js"></script>
