@@ -33,7 +33,7 @@ class PostRepository extends DbRepository
     {
         $sql = "
             SELECT a.*, u.user_name
-                FROM status a
+                FROM Post a
                     LEFT JOIN user u ON a.user_id = u.id
                 WHERE u.id = :user_id
                 ORDER BY a.created_at DESC
