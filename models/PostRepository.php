@@ -23,20 +23,13 @@ class PostRepository extends DbRepository
         ));
     }
 
-    // public function hashPassword($password)
-    // {
-    //     return sha1($password . 'SecretKey');
-    // }
-
     //ユーザの投稿一覧ではユーザ ID からデータを取得する
     public function fetchAllByUserId($user_id)
     {
         $sql = "
-            SELECT a.*, u.user_name
-                FROM Post a
-                    LEFT JOIN user u ON a.user_id = u.id
-                WHERE u.id = :user_id
-                ORDER BY a.created_at DESC
+            SELECT user_name
+                FROM post
+                ORDER BY created_at DESC
         ";
 
         return $this->fetchAll($sql, array(':user_id' => $user_id));

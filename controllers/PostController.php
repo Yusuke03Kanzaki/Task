@@ -4,20 +4,10 @@ class PostController extends Controller
 {
     // protected $auth_actions = array('index', 'signout', 'follow');
 
-    function indexAction()
+    function indexAction($params)
     {
-
-        
-        return $this->render(array(
-        //     // 'statuses' => $statuses,
-        //     'body'     => '',
-        //     '_token'   => $this->generateCsrfToken('status/post'),
-        ));
-    }
-
-    public function userAction($params)
-    {
-        $user = $this->db_manager->get('User')
+        // getでRepositoryクラスを呼び出す。ここではPostRepositoryを呼び出している
+        $user = $this->db_manager->get('Post')
             ->fetchByUserName($params['user_name']);
         if (!$user) {
             $this->forward404();
@@ -41,7 +31,43 @@ class PostController extends Controller
             'following' => $following,
             '_token'    => $this->generateCsrfToken('account/follow'),
         ));
+
+        
+        // return $this->render(array(
+        // //     // 'statuses' => $statuses,
+        // //     'body'     => '',
+        // //     '_token'   => $this->generateCsrfToken('status/post'),
+        // ));
     }
+
+    // public function userAction($params)
+    // {
+    //     // getでRepositoryクラスを呼び出す。ここではPostRepositoryを呼び出している
+    //     $user = $this->db_manager->get('Post')
+    //         ->fetchByUserName($params['user_name']);
+    //     if (!$user) {
+    //         $this->forward404();
+    //     }
+
+    //     $statuses = $this->db_manager->get('Status')
+    //         ->fetchAllByUserId($user['id']);
+        
+    //     $following = null;
+    //     if ($this->session->isAuthenticated()) {
+    //         $my = $this->session->get('user');
+    //         if ($my['id'] !== $user['id']) {
+    //             $following = $this->db_manager->get('Following')
+    //                 ->isFollowing($my['id'], $user['id']);
+    //         }
+    //     }
+
+    //     return $this->render(array(
+    //         'user'      => $user,
+    //         'statuses'  => $statuses,
+    //         'following' => $following,
+    //         '_token'    => $this->generateCsrfToken('account/follow'),
+    //     ));
+    // }
 
     function aboutAction()
     {
