@@ -6,12 +6,8 @@ class PostController extends Controller
 
     function indexAction()
     {
-        // echo 111;
-        $user = $this->session->get('user');  
-        // print_r($user);
         // $statuses = $this->db_manager->get('Status')
         //     ->fetchAllPersonalArchivesByUserId($user['id']);  //エラーが出てheaderが消えてしまう
-        // print_r($statuses);
 
         return $this->render(array(
         //     // 'statuses' => $statuses,
@@ -22,12 +18,8 @@ class PostController extends Controller
 
     function aboutAction()
     {
-        // echo 111;
-        // $user = $this->session->get('user');
         $statuses = $this->db_manager->get('Status');
             // ->fetchAllPersonalArchivesByUserId($user['id']);  //エラーが出てheaderが消えてしまう
-        // print_r($statuses);
-        // var_dump($statuses);
 
         return $this->render(array(
             'statuses' => $statuses,
@@ -38,12 +30,9 @@ class PostController extends Controller
 
     function sampleAction()
     {
-        // echo 111;
         // $user = $this->session->get('user');
         $statuses = $this->db_manager->get('Status');
             // ->fetchAllPersonalArchivesByUserId($user['id']);  //エラーが出てheaderが消えてしまう
-        // print_r($statuses);
-        // var_dump($statuses);
 
         return $this->render(array(
             'statuses' => $statuses,
@@ -54,12 +43,9 @@ class PostController extends Controller
 
     function contactAction()
     {
-        // echo 111;
         // $user = $this->session->get('user');
         $statuses = $this->db_manager->get('Status');
             // ->fetchAllPersonalArchivesByUserId($user['id']);  //エラーが出てheaderが消えてしまう
-        // print_r($statuses);
-        // var_dump($statuses);
 
         return $this->render(array(
             'statuses' => $statuses,
@@ -70,12 +56,9 @@ class PostController extends Controller
 
     function post_indexAction()
     {
-        // echo 111;
         // $user = $this->session->get('user');
         $statuses = $this->db_manager->get('Status');
             // ->fetchAllPersonalArchivesByUserId($user['id']);  //エラーが出てheaderが消えてしまう
-        // print_r($statuses);
-        // var_dump($statuses);
 
         return $this->render(array(
             'statuses' => $statuses,
@@ -93,31 +76,11 @@ class PostController extends Controller
             $this->forward404();
         }
 
-        // echo 111;
-        // $token = $this->request->getPost('_token');
-        // // var_dump($token);        
-        // if (!$this->checkCsrfToken('post/post', $token)) {  //$token = NULL
-            // return $this->redirect('/');
-        // }
-
         $body = $this->request->getPost('body');
-        // echo 111;
-        // var_dump($body);
 
         $errors = array();
 
-        // var_dump($body);
-        // echo 111;
-        // print_r(strlen($body));
-        // if (!strlen($body)) {
-        //     $errors[] = 'ひとことを入力してください';
-        // } else if (mb_strlen($body) > 200) {
-        //     $errors[] = 'ひとことは200 文字以内で入力してください';
-        // }
-        // echo 111;
-
         //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを StatusRepository クラスの insert() メソッドに渡して保存しています。
-        // echo 111;
         $user = $this->session->get('user');
         // print_r($user);
         // var_dump($user);
@@ -147,16 +110,32 @@ class PostController extends Controller
         )/*, 'index'*/);
     }
 
-    function testAction()
+    public function userAction($params)
     {
-        // return $this->render(array(
-        //     //     // 'statuses' => $statuses,
-        //     //     'body'     => '',
-        //     //     '_token'   => $this->generateCsrfToken('status/post'),
-        //     ));
+        $user = $this->db_manager->get('User')
+            ->fetchByUserName($params['user_name']);
+        if (!$user) {
+            $this->forward404();
+        }
 
-        // echo 11111;
+        $statuses = $this->db_manager->get('Status')
+            ->fetchAllByUserId($user['id']);
+        
+        $following = null;
+        if ($this->session->isAuthenticated()) {
+            $my = $this->session->get('user');
+            if ($my['id'] !== $user['id']) {
+                $following = $this->db_manager->get('Following')
+                    ->isFollowing($my['id'], $user['id']);
+            }
+        }
+
+        return $this->render(array(
+            'user'      => $user,
+            'statuses'  => $statuses,
+            'following' => $following,
+            '_token'    => $this->generateCsrfToken('account/follow'),
+        ));
     }
-
 
 }
