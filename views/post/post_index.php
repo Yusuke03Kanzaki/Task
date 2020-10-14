@@ -18,9 +18,6 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>Let's create your own article! Please fill out the form below.</p>
-        <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-        <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-        <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
        <form action="<?php echo $base_url; ?>/post/post" method="post" name="body" id="contactForm" novalidate> <!-- ここからform部分 -->
           <div class="control-group">  <!--名前-->
             <div class="form-group floating-label-form-group controls">
@@ -32,28 +29,14 @@
           <div class="control-group"> <!--クラスの役割がわからない-->
             <div class="form-group floating-label-form-group controls">
               <label>Article Title</label>
-              <input type="text" class="form-control" placeholder="Article Title" id="name" data-required-error="Please enter your name.">
+              <input type="text" class="form-control" placeholder="Article Title" id="title" required data-validation-required-message="Please enter your Title.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
-          <!-- <div class="control-group">  メアドは必要ない
-            <div class="form-group floating-label-form-group controls">
-              <label>Email Address</label>
-              <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-              <p class="help-block text-danger"></p>
-            </div>
-          </div> -->
-          <!-- <div class="control-group">  電話番号もいらない
-            <div class="form-group col-xs-12 floating-label-form-group controls">
-              <label>Phone Number</label>
-              <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-              <p class="help-block text-danger"></p>
-            </div>
-          </div> -->
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Message</label>
-              <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+              <textarea rows="5" class="form-control" placeholder="Message" id="message" ></textarea>
               <p class="help-block text-danger"></p>
             </div>
           </div>

@@ -20,14 +20,12 @@ class DbManager
             'password' => '',
             'options'  => [],
         ], $params);
-        // echo 'aaa'. PHP_EOL;
         $con = new PDO(
             $params['dsn'],
             $params['user'],
             $params['password'],
             $params['options']
         );
-        // echo 'aaa'. PHP_EOL;
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $this->connections[$name] = $con;

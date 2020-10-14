@@ -16,6 +16,7 @@
 <?php endif; ?>
 
 <div id="statuses">
+    <!-- <?php echo 111;?> -->
     <?php foreach ($statuses as $status): ?>
     <?php echo $this->render('status/status', array('status' => $status)); ?>
     <?php endforeach; ?>
