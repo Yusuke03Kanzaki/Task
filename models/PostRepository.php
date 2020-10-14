@@ -51,4 +51,12 @@ class PostRepository extends DbRepository
             ':user_name' => $user_name,
         ));
     }
+
+    public function fetchByUserName($user_name)
+    {
+        $sql = "SELECT * FROM user WHERE user_name = :user_name";
+
+        return $this->fetch($sql, array(':user_name' => $user_name));
+    }
 }
+
