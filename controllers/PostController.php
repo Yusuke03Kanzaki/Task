@@ -121,7 +121,7 @@ class PostController extends Controller
     //トークン。認証はスキップ
     function postAction()
     {
-        echo 123456789;
+        // echo 123456789;
 
         if (!$this->request->isPost()) {
             $this->forward404();
@@ -131,11 +131,13 @@ class PostController extends Controller
 
         $errors = array();
 
-        //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを StatusRepository クラスの insert() メソッドに渡して保存しています。
-        $user = $this->session->get('user');
-        // print_r($user);
+        //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを PostRepository クラスの insert() メソッドに渡して保存しています。
+        $user = $this->session->get('post');
+        print_r($user);
         // var_dump($user);
-        $this->db_manager->get('Status')->insert($user['id'], $body);
+        // echo 111;
+        $this->db_manager->get('Post')->insert($user['id'], $body);
+        // echo 222;
 
         return $this->redirect('/');
 

@@ -18,7 +18,6 @@ class PostRepository extends DbRepository
 
         $stmt = $this->execute($sql, array(
             ':user_name'  => $user_name,
-            // ':password'   => $password,
             ':created_at' => $now->format('Y-m-d H:i:s'),
         ));
     }
@@ -56,6 +55,7 @@ class PostRepository extends DbRepository
 
     function fetchByIdAndUserName()
     {
+        // echo 222;
         $sql = "
             SELECT *
                 FROM post

@@ -104,7 +104,7 @@
 
   <!-- Contact Form JavaScript -->
   <script src="http://localhost/task/js/jqBootstrapValidation.js"></script>
-  <script src="http://localhost/task/js/contact_me.js"></script>
+  <!-- <script src="http://localhost/task/js/contact_me.js"></script> -->  <!-- postAction確認のため一時的に無効化 -->
 
   <!-- Custom scripts for this template -->
   <script src="http://localhost/task/js/clean-blog.min.js"></script>

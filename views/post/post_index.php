@@ -22,21 +22,21 @@
           <div class="control-group">  <!--名前-->
             <div class="form-group floating-label-form-group controls">
               <label>Name</label>
-              <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+              <input type="text" class="form-control" placeholder="Name" id="name" >
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group"> <!--クラスの役割がわからない-->
             <div class="form-group floating-label-form-group controls">
               <label>Post Title</label>
-              <input type="text" class="form-control" placeholder="Post Title" id="title" required data-validation-required-message="Please enter your Title.">
+              <input type="text" class="form-control" placeholder="Post Title" id="post_title" >
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group"> <!--クラスの役割がわからない-->
             <div class="form-group floating-label-form-group controls">
               <label>Post subTitle</label>
-              <input type="text" class="form-control" placeholder="Post subTitle" id="title" required data-validation-required-message="Please enter your Title.">
+              <input type="text" class="form-control" placeholder="Post subTitle" id="post_subtitle" >
               <p class="help-block text-danger"></p>
             </div>
           </div>
