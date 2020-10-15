@@ -18,25 +18,16 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-      <div id="statuses">
-       <?php foreach ($statuses as $status): ?>
-       <?php echo $this->render('status/status', array('status' => $status)); ?>
-       <?php endforeach; ?>
-       </div>
-       <div class="post-preview">
-          <a href="sample-post.php">
-            <h2 class="post-title">
-              Man must explore, and this is exploration at its greatest
+        <div id="statuses">
+          <?php foreach ($statuses as $status): ?>
+            <h2>
+              <?php echo $this->render('post/status', array('status' => $status)); ?>
+              <!-- <?php echo $this->render('post/status', array('status' => $status)); ?> -->
             </h2>
-            <h3 class="post-subtitle">
-              Problems look mighty small from 150 miles up
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 24, 2019</p>
+          <p class="post-meta">Posted by</p>
+          <hr>
+          <?php endforeach; ?>
         </div>
-        <hr>
         <div class="post-preview">
           <a href="sample-post.php">
             <h2 class="post-title">

@@ -74,6 +74,7 @@ abstract class Controller
             'base_url' => $this->request->getBaseUrl(),
             'session'  => $this->session,
         );
+        // print_r($variables);
         // print_r($this->request);
         // var_dump($this->request);
         // var_dump($template);

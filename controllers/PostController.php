@@ -15,6 +15,19 @@ class PostController extends Controller
          ));
     }
 
+     // 詳細表示
+    function showAction($params)
+    {
+        $status = $this->db_manager->get('Status')
+            ->fetchByIdAndUserName($params['id'], $params['user_name']);
+ 
+        if (!$status) {
+            $this->forward404();
+        }
+ 
+        return $this->render(array('status' => $status));
+    }
+
     // public function userAction($params)
     // {
     //     // getでRepositoryクラスを呼び出す。ここではPostRepositoryを呼び出している
@@ -136,18 +149,5 @@ class PostController extends Controller
             'statuses' => $statuses,
             '_token'   => $this->generateCsrfToken('post/post'),
         )/*, 'index'*/);
-    }
-
-    // 詳細表示
-    public function showAction($params)
-    {
-        $status = $this->db_manager->get('Status')
-            ->fetchByIdAndUserName($params['id'], $params['user_name']);
-
-        if (!$status) {
-            $this->forward404();
-        }
-
-        return $this->render(array('status' => $status));
     }
 }
