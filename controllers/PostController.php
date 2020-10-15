@@ -4,21 +4,23 @@ class PostController extends Controller
 {
     // protected $auth_actions = array('index', 'signout', 'follow');
 
-    function indexAction($params)
+    function indexAction(/*$params*/)
     {
+        $statuses = $this->db_manager->get('Post')
+            ->fetchAllPersonalArchivesByUserId();
         // getでRepositoryクラスを呼び出す。ここではPostRepositoryを呼び出している
-        $user = $this->db_manager->get('Post')
-            ->fetchByUserName($params['user_name']);
-        if (!$user) {
-            $this->forward404();
-        }
+        // $user = $this->db_manager->get('Post')
+        //     ->fetchByUserName($params['user_name']);
+        // if (!$user) {
+        //     $this->forward404();
+        // }
 
-        $statuses = $this->db_manager->get('Status')
-            ->fetchAllByUserId($user['id']);
+        // $statuses = $this->db_manager->get('Status')
+        //     ->fetchAllByUserId($user['id']);
 
         return $this->render(array(
-            'user'      => $user,
-            'statuses'  => $statuses,
+            // 'user'      => $user,
+            // 'statuses'  => $statuses,
         ));
 
         

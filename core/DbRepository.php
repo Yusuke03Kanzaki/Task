@@ -39,7 +39,9 @@ abstract class DbRepository
     public function execute($sql, $params = [])
     {
         $stmt = $this->con->prepare($sql);
+        // print_r($stmt);
         $stmt->execute($params);
+        // print_r($stmt);
 
         return $stmt;
     }
@@ -63,9 +65,12 @@ abstract class DbRepository
      * @param string $sql
      * @param array $params
      * @return array
+     * executeにsql文が入る
      */
     public function fetchAll($sql, $params = [])
     {
+        // print_r($this->execute($sql, $params));
+        // print_r($this->execute($sql, $params)->fetchAll(PDO::FETCH_ASSOC));
         return $this->execute($sql, $params)->fetchAll(PDO::FETCH_ASSOC);
     }
 }
