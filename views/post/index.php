@@ -22,9 +22,8 @@
           <?php foreach ($statuses as $status): ?>
             <h2>
               <?php echo $this->render('post/status', array('status' => $status)); ?>
-              <!-- <?php echo $this->render('post/status', array('status' => $status)); ?> -->
+              <!-- <?php echo $this->render('status/status', array('status' => $status)); ?> -->
             </h2>
-          <p class="post-meta">Posted by</p>
           <hr>
           <?php endforeach; ?>
         </div>

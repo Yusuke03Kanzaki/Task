@@ -35,23 +35,6 @@ class PostRepository extends DbRepository
         return $this->fetchAll($sql, array(':user_id' => $user_id));
     }
 
-    //ログインしているユーザーの情報を取得する
-    public function fetchByIdAndUserName($id, $user_name)
-    {
-        $sql = "
-            SELECT a.* , u.user_name
-                FROM status a
-                    LEFT JOIN user u ON u.id = a.user_id
-                WHERE a.id = :id
-                    AND u.user_name = :user_name
-        ";
-
-        return $this->fetch($sql, array(
-            ':id'        => $id,
-            ':user_name' => $user_name,
-        ));
-    }
-
     public function fetchByUserName($user_name)
     {
         $sql = "SELECT * FROM user WHERE user_name = :user_name";
@@ -69,6 +52,19 @@ class PostRepository extends DbRepository
         ";
 
     return $this->fetchAll($sql, array(/*':user_id' => $user_id*/));
+    }
+
+    function fetchByIdAndUserName()
+    {
+        $sql = "
+            SELECT *
+                FROM post
+        ";
+
+        return $this->fetch($sql, array(/*
+            ':id'        => $id,
+            ':user_name' => $user_name,
+        */));
     }
 }
 

@@ -25,24 +25,10 @@ class MiniBlogApplication extends Application
                 =>array('controller' => 'post', 'action' => 'post_index'),
             '/post/post'
                 =>array('controller' => 'post', 'action' => 'post'),
-            '/post/test'
-                =>array('controller' => 'post', 'action' => 'test'),
-            '/user/:user_name'
-                => array('controller' => 'status', 'action' => 'user'), 
-            '/user/:user_name/status/:id'
-                => array('controller' => 'status', 'action' => 'show'),
-            // '/status/post'
-            //     => array('controller' => 'status', 'action' => 'post'),
-            // '/user/:user_name'
-            //     => array('controller' => 'status', 'action' => 'user'),
-            // '/user/:user_name/status/:id'
-            //     => array('controller' => 'status', 'action' => 'show'),
-            // '/account'
-            //     => array('controller' => 'account', 'action' => 'index'),
-            // '/account/:action'
-            //     => array('controller' => 'account'),
-            // '/follow'
-            //     => array('controller' => 'account', 'action' => 'follow'),
+            '/post/:user_name'
+                =>array('controller' => 'post', 'action' => 'status'), 
+            '/post/:user_name/status/:id'
+                =>array('controller' => 'post', 'action' => 'show'),
         );
     }
 

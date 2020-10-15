@@ -15,18 +15,28 @@ class PostController extends Controller
          ));
     }
 
-     // 詳細表示
-    function showAction($params)
+     //詳細表示
+    function showAction()
     {
-        $status = $this->db_manager->get('Status')
-            ->fetchByIdAndUserName($params['id'], $params['user_name']);
+        // echo 111;
+        $status = $this->db_manager->get('Post')
+            ->fetchByIdAndUserName();
  
+        // echo 222;
+        // print_r($status);
+        // var_dump($status);
         if (!$status) {
             $this->forward404();
         }
+        // echo 333;
  
         return $this->render(array('status' => $status));
     }
+
+    // function showAction($params)
+    // {
+    //     echo 111;
+    // }
 
     // public function userAction($params)
     // {

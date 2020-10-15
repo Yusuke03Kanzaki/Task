@@ -45,8 +45,11 @@ abstract class Controller
         $this->action_name = $action;
 
         $action_method = $action . 'Action';
+        // print_r($action_method);
         // var_dump('Forwarded 404 page from '
         if (!method_exists($this, $action_method)) {
+            // echo 111;
+
             $this->forward404();
         }
 
