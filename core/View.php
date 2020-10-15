@@ -41,6 +41,7 @@ class View
     {
         // print_r($_path);
         // var_dump($_path);
+        // print_r($_variables);
         $_file = $this->base_dir . '/' . $_path . '.php';
         // echo 1;
         // print_r($_file);
@@ -60,6 +61,7 @@ class View
         require $_file;
 
         $content = ob_get_clean();
+        // print_r($content);
 
         if ($_layout) {
             $content = $this->render($_layout,

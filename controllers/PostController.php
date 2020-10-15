@@ -2,33 +2,17 @@
 
 class PostController extends Controller
 {
-    // protected $auth_actions = array('index', 'signout', 'follow');
 
-    function indexAction(/*$params*/)
+    // 一覧表示
+    function indexAction()
     {
         $statuses = $this->db_manager->get('Post')
             ->fetchAllPersonalArchivesByUserId();
-        // getでRepositoryクラスを呼び出す。ここではPostRepositoryを呼び出している
-        // $user = $this->db_manager->get('Post')
-        //     ->fetchByUserName($params['user_name']);
-        // if (!$user) {
-        //     $this->forward404();
-        // }
 
-        // $statuses = $this->db_manager->get('Status')
-        //     ->fetchAllByUserId($user['id']);
-
-        return $this->render(array(
-            // 'user'      => $user,
-            // 'statuses'  => $statuses,
-        ));
-
-        
-        // return $this->render(array(
-        // //     // 'statuses' => $statuses,
-        // //     'body'     => '',
-        // //     '_token'   => $this->generateCsrfToken('status/post'),
-        // ));
+        // print_r($statuses);
+         return $this->render(array(
+             'statuses'  => $statuses,
+         ));
     }
 
     // public function userAction($params)
@@ -152,5 +136,18 @@ class PostController extends Controller
             'statuses' => $statuses,
             '_token'   => $this->generateCsrfToken('post/post'),
         )/*, 'index'*/);
+    }
+
+    // 詳細表示
+    public function showAction($params)
+    {
+        $status = $this->db_manager->get('Status')
+            ->fetchByIdAndUserName($params['id'], $params['user_name']);
+
+        if (!$status) {
+            $this->forward404();
+        }
+
+        return $this->render(array('status' => $status));
     }
 }

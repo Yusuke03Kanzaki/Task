@@ -18,6 +18,11 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
+      <div id="statuses">
+       <?php foreach ($statuses as $status): ?>
+       <?php echo $this->render('status/status', array('status' => $status)); ?>
+       <?php endforeach; ?>
+       </div>
        <div class="post-preview">
           <a href="sample-post.php">
             <h2 class="post-title">
