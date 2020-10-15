@@ -28,8 +28,15 @@
           </div>
           <div class="control-group"> <!--クラスの役割がわからない-->
             <div class="form-group floating-label-form-group controls">
-              <label>Article Title</label>
-              <input type="text" class="form-control" placeholder="Article Title" id="title" required data-validation-required-message="Please enter your Title.">
+              <label>Post Title</label>
+              <input type="text" class="form-control" placeholder="Post Title" id="title" required data-validation-required-message="Please enter your Title.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group"> <!--クラスの役割がわからない-->
+            <div class="form-group floating-label-form-group controls">
+              <label>Post subTitle</label>
+              <input type="text" class="form-control" placeholder="Post subTitle" id="title" required data-validation-required-message="Please enter your Title.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
