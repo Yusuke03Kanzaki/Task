@@ -42,7 +42,7 @@ abstract class DbRepository
         $stmt = $this->con->prepare($sql);
         // echo 555;
         // print_r($stmt);
-        print_r($params);
+        // print_r($params);
         $stmt->execute($params);
         // echo 666;
         // print_r($stmt);
@@ -75,7 +75,7 @@ abstract class DbRepository
     public function fetchAll($sql, $params = [])
     {
         // var_dump($this->execute($sql, $params));
-        print_r($this->execute($sql, $params));
+        // print_r($this->execute($sql, $params));
         // print_r($this->execute($sql, $params)->fetchAll(PDO::FETCH_ASSOC));
         return $this->execute($sql, $params)->fetchAll(PDO::FETCH_ASSOC);
     }

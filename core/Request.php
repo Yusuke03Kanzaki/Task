@@ -45,6 +45,7 @@ class Request
     public function getPost($name, $default = null)
     {
         // echo 111;
+        // print_r($name);
         // var_dump($_POST[$name]);
         // var_dump(isset($_POST[$name]));
         // print_r($name);

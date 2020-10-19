@@ -128,15 +128,17 @@ class PostController extends Controller
         }
 
         $body = $this->request->getPost('body');
+        // print_r($body);
 
         $errors = array();
+        $a = 0;  //仮のもの
 
         //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを PostRepository クラスの insert() メソッドに渡して保存しています。
         $user = $this->session->get('post');
-        print_r($user);
+        // print_r($user);
         // var_dump($user);
         // echo 111;
-        $this->db_manager->get('Post')->insert($user['id'], $body);
+        $this->db_manager->get('Post')->insert($user['id'], $body, $a);
         // echo 222;
 
         return $this->redirect('/');

@@ -22,7 +22,8 @@
           <div class="control-group">  <!--名前-->
             <div class="form-group floating-label-form-group controls">
               <label>Name</label>
-              <input type="text" class="form-control" placeholder="Name" id="name" >
+              
+              <input type="text" name="body" class="form-control" placeholder="Name" id="name" >
               <p class="help-block text-danger"></p>
             </div>
           </div>
