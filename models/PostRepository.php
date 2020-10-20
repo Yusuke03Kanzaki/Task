@@ -22,6 +22,19 @@ class PostRepository extends DbRepository
         ));
     }
 
+    function imageinsert($imgdat)
+    {
+        $sql = "
+            INSERT INTO image(image) 
+                VALUES(:imgdat)
+        ";
+
+        $stmt = $this->execute($sql, array(
+            ':imgdat' => $imgdat,
+        ));
+        // echo 444;
+    }
+
     //ユーザの投稿一覧ではユーザ ID からデータを取得する
     public function fetchAllByUserId($user_id)
     {

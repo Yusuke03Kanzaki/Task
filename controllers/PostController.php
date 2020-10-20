@@ -159,7 +159,11 @@ class PostController extends Controller
         // echo 333;
 
         //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを PostRepository クラスの insert() メソッドに渡して保存しています。
-        $this->db_manager->get('Post')->insert($user_name, $post_title, $post_subtitle, $body);
+        $this->db_manager->get('Post')->imageinsert($imgdat);
+
+        return $this->render(array(
+            // '_token'   => $this->generateCsrfToken('post/post'),
+        ));
 
 
         // $image = $this->request->getPost('image');
