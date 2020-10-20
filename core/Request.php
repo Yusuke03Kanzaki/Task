@@ -47,14 +47,12 @@ class Request
         // echo 111;
         // print_r($name);
         // var_dump($_POST[$name]);
-        // var_dump(isset($_POST[$name]));
-        // print_r($name);
         if (isset($_POST[$name])) {
             // echo 111;
             return $_POST[$name];
         }
-        // echo 222;
 
+        // echo 222;
         return $default;
     }
 

@@ -18,19 +18,18 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>Let's create your own article! Please fill out the form below.</p>
-       <form action="<?php echo $base_url; ?>/post/post" method="post" name="body" id="contactForm" novalidate> <!-- ここからform部分 -->
+       <form action="<?php echo $base_url; ?>/post/post" method="post"  id="contactForm" novalidate> <!-- ここからform部分 -->
           <div class="control-group">  <!--名前-->
             <div class="form-group floating-label-form-group controls">
               <label>Name</label>
-              
-              <input type="text" name="body" class="form-control" placeholder="Name" id="name" >
+              <input type="text" class="form-control" placeholder="Name" id="name" name="name">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group"> <!--クラスの役割がわからない-->
             <div class="form-group floating-label-form-group controls">
               <label>Post Title</label>
-              <input type="text" class="form-control" placeholder="Post Title" id="post_title" >
+              <input type="text" class="form-control" placeholder="Post Title" id="post_title" name='post_title'>
               <p class="help-block text-danger"></p>
             </div>
           </div>
@@ -50,7 +49,7 @@
           </div>
           <br>
           <div id="success"></div>
-          <button name='body' type="submit" class="btn btn-primary" id="sendMessageButton">SEND</button> 
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">SEND</button> 
         </form>
         <form>
       </div>
