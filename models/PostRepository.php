@@ -79,6 +79,18 @@ class PostRepository extends DbRepository
             ':user_name' => $user_name,
         */));
     }
+
+    function fetchImage()
+    {
+        $sql = "
+            SELECT image
+                FROM image
+                ORDER BY created_at DESC
+        ";
+
+        return $sql;
+        
+    }
 }
 
     

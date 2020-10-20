@@ -12,6 +12,8 @@ class MiniBlogApplication extends Application
     protected function registerRoutes()
     {
         return array(
+            '/post/image'
+                =>array('controller' => 'post', 'action' => 'image'),
             '/post/upload'
                 =>array('controller' => 'post', 'action' => 'upload'),
             '/'

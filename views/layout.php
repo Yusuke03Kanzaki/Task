@@ -49,6 +49,9 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo $base_url; ?>/post/post_index">Post</a> <!--リンク先でで投稿処理をする-->
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo $base_url; ?>/post/image">Image</a>
+          </li>
         </ul>
       </div>
     </div>
