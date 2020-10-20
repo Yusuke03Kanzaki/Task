@@ -34,35 +34,6 @@ class PostController extends Controller
         return $this->render(array('status' => $status));
     }
 
-    // public function userAction($params)
-    // {
-    //     // getでRepositoryクラスを呼び出す。ここではPostRepositoryを呼び出している
-    //     $user = $this->db_manager->get('Post')
-    //         ->fetchByUserName($params['user_name']);
-    //     if (!$user) {
-    //         $this->forward404();
-    //     }
-
-    //     $statuses = $this->db_manager->get('Status')
-    //         ->fetchAllByUserId($user['id']);
-        
-    //     $following = null;
-    //     if ($this->session->isAuthenticated()) {
-    //         $my = $this->session->get('user');
-    //         if ($my['id'] !== $user['id']) {
-    //             $following = $this->db_manager->get('Following')
-    //                 ->isFollowing($my['id'], $user['id']);
-    //         }
-    //     }
-
-    //     return $this->render(array(
-    //         'user'      => $user,
-    //         'statuses'  => $statuses,
-    //         'following' => $following,
-    //         '_token'    => $this->generateCsrfToken('account/follow'),
-    //     ));
-    // }
-
     function aboutAction()
     {
         $statuses = $this->db_manager->get('Status');
@@ -139,6 +110,7 @@ class PostController extends Controller
         )/*, 'index'*/);
     }
 
+    //　画像投稿
     function uploadAction()
     {
         // echo 111;
@@ -175,11 +147,15 @@ class PostController extends Controller
 
     }
 
+    //画像一覧表示
     function imageAction()
     {
-        // echo 111;
+        $images = $this->db_manager->get('Post')->fetchImage();
+
+        // print_r($statuses);
+        // var_dump($statuses);
         return $this->render(array(
-            // '_token'   => $this->generateCsrfToken('post/post'),
+            'statuses'  => $images,
         ));
     }
 }

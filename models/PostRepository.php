@@ -61,7 +61,7 @@ class PostRepository extends DbRepository
         return $this->fetch($sql, array(':user_name' => $user_name));
     }
 
-    //投稿を新しい順で取得。自作目メソッド
+    //投稿を新しい順で取得。自作メソッド
     public function fetchAllPersonalArchivesByUserId()  
     {
         $sql = "
