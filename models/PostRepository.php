@@ -22,15 +22,19 @@ class PostRepository extends DbRepository
         ));
     }
 
+    // 画像の登録を行う
     function imageinsert($imgdat)
     {
+        $now = new DateTime();
+
         $sql = "
-            INSERT INTO image(image) 
-                VALUES(:imgdat)
+            INSERT INTO image(image, created_at) 
+                VALUES(:imgdat, :created_at)
         ";
 
         $stmt = $this->execute($sql, array(
             ':imgdat' => $imgdat,
+            ':created_at' => $now->format('Y-m-d H:i:s'),
         ));
         // echo 444;
     }
@@ -66,7 +70,7 @@ class PostRepository extends DbRepository
                 ORDER BY created_at DESC
         ";
 
-    return $this->fetchAll($sql, array());
+        return $this->fetchAll($sql, array());
     }
 
     function fetchByIdAndUserName()
@@ -83,16 +87,16 @@ class PostRepository extends DbRepository
         */));
     }
 
+    // 画像を取得 
     function fetchImage()
     {
         $sql = "
             SELECT image
                 FROM image
+                ORDER BY created_at DESC
         ";
 
         return $this->fetchAll($sql, array());
-
-        
     }
 }
 

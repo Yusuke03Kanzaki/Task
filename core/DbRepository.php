@@ -75,7 +75,7 @@ abstract class DbRepository
      */
     public function fetchAll($sql, $params = [])
     {
-        echo 111;
+        // echo 111;
         // print_r($sql);
         // print_r($params);
         // var_dump($this->execute($sql, $params));

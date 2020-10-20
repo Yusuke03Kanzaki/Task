@@ -3,7 +3,7 @@
 class PostController extends Controller
 {
 
-    // 一覧表示
+    // 一覧表示。とトップページ表示
     function indexAction()
     {
         $statuses = $this->db_manager->get('Post')
@@ -164,6 +164,8 @@ class PostController extends Controller
         // 画像データ取得
         $image = $this->db_manager->get('Post')->fetchImage();
 
+        echo $image;
+
         // $result = mysql_query($sql, $dbLink);
         // $row = mysql_fetch_row($result);
 
@@ -175,7 +177,7 @@ class PostController extends Controller
 
     function imageAction()
     {
-        echo 111;
+        // echo 111;
         return $this->render(array(
             // '_token'   => $this->generateCsrfToken('post/post'),
         ));
