@@ -49,7 +49,10 @@ class PostRepository extends DbRepository
 
     public function fetchByUserName($user_name)
     {
-        $sql = "SELECT * FROM user WHERE user_name = :user_name";
+        $sql = "
+            SELECT * 
+                FROM user 
+                WHERE user_name = :user_name";
 
         return $this->fetch($sql, array(':user_name' => $user_name));
     }
@@ -85,10 +88,10 @@ class PostRepository extends DbRepository
         $sql = "
             SELECT image
                 FROM image
-                ORDER BY created_at DESC
         ";
 
-        return $sql;
+        return $this->fetchAll($sql, array());
+
         
     }
 }
