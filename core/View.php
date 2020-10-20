@@ -57,8 +57,10 @@ class View
         // if ($_file === '/Applications/MAMP/htdocs/task/views/post/post.php') {
         //     $_file = '/Applications/MAMP/htdocs/task/views/post/post_index.php';
         // }
+        // echo 111;
 
         require $_file;
+        // echo 222;
 
         $content = ob_get_clean();
         // print_r($content);

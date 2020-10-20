@@ -4,24 +4,21 @@ class PostRepository extends DbRepository
 {
 
     //  レコードの新規作成を行う
-    //  $user_name  ユーザーID
-    //  $password  パスワード
-    public function insert($user_name, $post_title, $post_subtitle, $body/*, $password*/)  
+    public function insert($user_name, $post_title, $post_subtitle, $body)  
     {
-        // $password = $this->hashPassword($password);
         $now = new DateTime();
 
         $sql = "
-            INSERT INTO post(user_name, created_at, post_title, post_subtitle, body)
-                VALUES(:user_name, :created_at, :post_title, :post_subtitle :body)  
-        ";  // password, INSERT INTO post無いから削除。:password, VALUES無いから削除
+            INSERT INTO post(user_name, post_title, post_subtitle, body, created_at)
+                VALUES(:user_name, :post_title, :post_subtitle, :body, :created_at)   
+        "; 
 
         $stmt = $this->execute($sql, array(
-            ':user_name'  => $user_name,
-            ':post_title'  => $post_title,
+            ':user_name'      => $user_name,
+            ':post_title'     => $post_title,
             ':post_subtitle'  => $post_subtitle,
-            ':body' => $body,
-            ':created_at' => $now->format('Y-m-d H:i:s'),
+            ':body'           => $body,
+            ':created_at'     => $now->format('Y-m-d H:i:s'),
         ));
     }
 

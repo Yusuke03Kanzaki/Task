@@ -127,15 +127,16 @@ class PostController extends Controller
 
         $user_name = $this->request->getPost('name');
         $post_title = $this->request->getPost('post_title');
-
-        var_dump($post_title);
+        $post_subtitle = $this->request->getPost('post_subtitle');
+        $body = $this->request->getPost('body');
+        $a = [$user_name, $post_title, $post_subtitle, $body];
+        // var_dump($a);
 
         $errors = array();
-        $a = 0;  //仮のもの
 
         //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを PostRepository クラスの insert() メソッドに渡して保存しています。
         // $user = $this->session->get('post');
-        $this->db_manager->get('Post')->insert($user_name, $post_title, $a);
+        $this->db_manager->get('Post')->insert($user_name, $post_title, $post_subtitle, $body);
         // $this->db_manager->get('Post')->insert($user['id'], $name, $a);
         // echo 222;
 
@@ -158,7 +159,7 @@ class PostController extends Controller
         return $this->render(array(
             'errors'   => $errors,
             'body'     => $body,
-            'statuses' => $statuses,
+            // 'statuses' => $statuses,
             '_token'   => $this->generateCsrfToken('post/post'),
         )/*, 'index'*/);
     }

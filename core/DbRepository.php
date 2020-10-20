@@ -43,6 +43,7 @@ abstract class DbRepository
         // echo 555;
         // print_r($stmt);
         // print_r($params);
+        // print_r($stmt->execute($params));
         $stmt->execute($params);
         // echo 666;
         // print_r($stmt);

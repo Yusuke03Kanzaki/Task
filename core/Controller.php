@@ -87,6 +87,9 @@ abstract class Controller
         // print_r($template);
         if (is_null($template)) {
             $template = $this->action_name;
+            if ($template == 'post') {  //投稿後にpost_indexに遷移したいから手っ取り早く書き換える。普通に綺麗にやろうとすると時間がかかりそう
+                $template = 'post_index';
+            }
             // echo 111;
         }
         // print_r($this->action_name);

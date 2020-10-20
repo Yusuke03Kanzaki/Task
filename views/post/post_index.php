@@ -36,14 +36,14 @@
           <div class="control-group"> <!--クラスの役割がわからない-->
             <div class="form-group floating-label-form-group controls">
               <label>Post subTitle</label>
-              <input type="text" class="form-control" placeholder="Post subTitle" id="post_subtitle" >
+              <input type="text" class="form-control" placeholder="Post subTitle" id="post_subtitle" name='post_subtitle'>
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Message</label>
-              <textarea rows="5" class="form-control" placeholder="Message" id="message" ></textarea>
+              <textarea rows="5" class="form-control" placeholder="Message" id="message" name='body'></textarea>
               <p class="help-block text-danger"></p>
             </div>
           </div>
