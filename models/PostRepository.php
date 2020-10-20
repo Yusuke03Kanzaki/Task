@@ -50,7 +50,7 @@ class PostRepository extends DbRepository
                 ORDER BY created_at DESC
         ";
 
-    return $this->fetchAll($sql, array(/*':user_id' => $user_id*/));
+    return $this->fetchAll($sql, array());
     }
 
     function fetchByIdAndUserName()

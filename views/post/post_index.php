@@ -29,14 +29,14 @@
           <div class="control-group"> <!--クラスの役割がわからない-->
             <div class="form-group floating-label-form-group controls">
               <label>Post Title</label>
-              <input type="text" class="form-control" placeholder="Post Title" id="post_title" name='post_title'>
+              <input type="text" class="form-control" placeholder="Title" id="post_title" name='post_title'>
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group"> <!--クラスの役割がわからない-->
             <div class="form-group floating-label-form-group controls">
               <label>Post subTitle</label>
-              <input type="text" class="form-control" placeholder="Post subTitle" id="post_subtitle" name='post_subtitle'>
+              <input type="text" class="form-control" placeholder="subTitle" id="post_subtitle" name='post_subtitle'>
               <p class="help-block text-danger"></p>
             </div>
           </div>
@@ -50,7 +50,15 @@
           <br>
           <div id="success"></div>
           <button type="submit" class="btn btn-primary" id="sendMessageButton">SEND</button> 
-        </form>
+          </form>
+          <hr>
+        <FORM method="post" enctype="multipart/form-data" action="<?php echo $base_url; ?>/post/upload">
+	            <P>画像登録＆アップロード</P>
+        	    画像パス：<INPUT type="file" name="upload" size="30"><BR>
+	            <INPUT type="submit" name="submit" value="送信">
+        </FORM>
+
+        
         <form>
       </div>
     </div>

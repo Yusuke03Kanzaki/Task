@@ -46,7 +46,7 @@ class Request
     {
         // echo 111;
         // print_r($name);
-        // var_dump($_POST[$name]);
+        // var_dump(isset($_POST[$name]));
         if (isset($_POST[$name])) {
             // echo 111;
             return $_POST[$name];

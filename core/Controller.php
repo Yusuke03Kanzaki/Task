@@ -77,6 +77,7 @@ abstract class Controller
             'base_url' => $this->request->getBaseUrl(),
             'session'  => $this->session,
         );
+        // print_r($defaults);
         // print_r($variables);
         // print_r($this->request);
         // var_dump($this->request);
@@ -84,6 +85,7 @@ abstract class Controller
 
         $view = new View($this->application->getViewDir(), $defaults);
 
+        // print_r($view);
         // print_r($template);
         if (is_null($template)) {
             $template = $this->action_name;

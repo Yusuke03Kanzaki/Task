@@ -10,6 +10,7 @@ class PostController extends Controller
             ->fetchAllPersonalArchivesByUserId();
 
         // print_r($statuses);
+        // var_dump($statuses);
          return $this->render(array(
              'statuses'  => $statuses,
          ));
@@ -18,7 +19,7 @@ class PostController extends Controller
      //詳細表示
     function showAction()
     {
-        // echo 111;
+        // print_r(111);
         $status = $this->db_manager->get('Post')
             ->fetchByIdAndUserName();
  
@@ -32,11 +33,6 @@ class PostController extends Controller
  
         return $this->render(array('status' => $status));
     }
-
-    // function showAction($params)
-    // {
-    //     echo 111;
-    // }
 
     // public function userAction($params)
     // {
@@ -118,7 +114,6 @@ class PostController extends Controller
         ));
     }
 
-    //トークン。認証はスキップ
     function postAction()
     {
         if (!$this->request->isPost()) {
@@ -129,32 +124,12 @@ class PostController extends Controller
         $post_title = $this->request->getPost('post_title');
         $post_subtitle = $this->request->getPost('post_subtitle');
         $body = $this->request->getPost('body');
-        $a = [$user_name, $post_title, $post_subtitle, $body];
-        // var_dump($a);
+        // var_dump($user_name);
 
         $errors = array();
 
         //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを PostRepository クラスの insert() メソッドに渡して保存しています。
-        // $user = $this->session->get('post');
         $this->db_manager->get('Post')->insert($user_name, $post_title, $post_subtitle, $body);
-        // $this->db_manager->get('Post')->insert($user['id'], $name, $a);
-        // echo 222;
-
-        // return $this->redirect('/');
-
-        // if (count($errors) === 0) {  
-        //     // echo 111;
-        //     $user = $this->session->get('user');
-        //     $this->db_manager->get('Status')->insert($user['id'], $body);
-
-        //     return $this->redirect('/');
-        // }
-
-        // $user = $this->session->get('user');
-        // $statuses = $this->db_manager->get('Status')
-        //     ->fetchAllPersonalArchivesByUserId($user['id']);
-        
-        // echo 12345;
 
         return $this->render(array(
             'errors'   => $errors,
@@ -162,5 +137,31 @@ class PostController extends Controller
             // 'statuses' => $statuses,
             '_token'   => $this->generateCsrfToken('post/post'),
         )/*, 'index'*/);
+    }
+
+    function uploadAction()
+    {
+        // echo 111;
+        // var_dump($this->request->isPost());
+        if (!$this->request->isPost()) {
+            $this->forward404();
+        }
+
+        $upfile = $_FILES["upload"]["tmp_name"];
+        if ($upfile==""){
+            print("ファイルのアップロードができませんでした。<BR>");
+            exit;
+        }
+
+        // ファイル取得
+        $imgdat = file_get_contents($upfile);
+        // var_dump($imgdat);
+        // echo 333;
+
+        //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを PostRepository クラスの insert() メソッドに渡して保存しています。
+        $this->db_manager->get('Post')->insert($user_name, $post_title, $post_subtitle, $body);
+
+
+        // $image = $this->request->getPost('image');
     }
 }

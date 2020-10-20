@@ -40,7 +40,6 @@ class View
     public function render($_path, $_variables = array(), $_layout = false) 
     {
         // print_r($_path);
-        // var_dump($_path);
         // print_r($_variables);
         $_file = $this->base_dir . '/' . $_path . '.php';
         // echo 1;
@@ -52,12 +51,6 @@ class View
 
         ob_start();
         ob_implicit_flush(0);
-
-        //  PostActionを実装したときにpost_index.phpを読み込みたい。そもそもpost.phpを用意していない
-        // if ($_file === '/Applications/MAMP/htdocs/task/views/post/post.php') {
-        //     $_file = '/Applications/MAMP/htdocs/task/views/post/post_index.php';
-        // }
-        // echo 111;
 
         require $_file;
         // echo 222;

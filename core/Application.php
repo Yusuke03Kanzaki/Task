@@ -138,6 +138,7 @@ abstract class Application
      */
     public function getViewDir()
     {
+        // print_r($this->getRootDir());
         return $this->getRootDir() . '/views';
     }
 

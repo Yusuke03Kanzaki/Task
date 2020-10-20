@@ -18,9 +18,9 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-          <?php foreach ($statuses as $status): ?>
+        <?php foreach ($statuses as $status): ?>
               <?php echo $this->render('post/status', array('status' => $status)); ?>
-          <?php endforeach; ?>
+        <?php endforeach; ?>
         <div class="post-preview">
           <a href="<?php echo $base_url; ?>/post/sample">
             <h2 class="post-title">

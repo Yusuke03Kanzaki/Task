@@ -6,13 +6,14 @@ class MiniBlogApplication extends Application
 
     public function getRootDir()
     {
-        // var_dump(dirname(__FILE__));
         return dirname(__FILE__);
     }
 
     protected function registerRoutes()
     {
         return array(
+            '/post/upload'
+                =>array('controller' => 'post', 'action' => 'upload'),
             '/'
                 =>array('controller' => 'post', 'action' => 'index'),
             '/post/about'

@@ -35,7 +35,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo $base_url; ?>/">Home</a>
+            <a class="nav-link" href="<?php echo $base_url;  ?>/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo $base_url; ?>/post/about">About</a>
@@ -104,7 +104,7 @@
 
   <!-- Contact Form JavaScript -->
   <script src="http://localhost/task/js/jqBootstrapValidation.js"></script>
-  <!-- <script src="http://localhost/task/js/contact_me.js"></script> -->  postAction確認のため一時的に無効化 -->
+  <!-- <script src="http://localhost/task/js/contact_me.js"></script> -->  <!--postAction確認のため一時的に無効化 -->
 
   <!-- Custom scripts for this template -->
   <script src="http://localhost/task/js/clean-blog.min.js"></script>
