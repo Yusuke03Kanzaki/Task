@@ -99,6 +99,7 @@ abstract class Controller
 
         $path = $this->controller_name . '/' .$template;
         // print_r($path);
+        // print_r($layout);
 
         return $view->render($path, $variables, $layout);
     }

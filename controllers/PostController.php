@@ -150,12 +150,26 @@ class PostController extends Controller
     //画像一覧表示
     function imageAction()
     {
-        $images = $this->db_manager->get('Post')->fetchImage();
+        $statuses = $this->db_manager->get('Post')->fetchImage();
+        // $image = $this->db_manager->get('Post')->fetchImage();
 
+        // $statuses = base64_encode($image['image']);
         // print_r($statuses);
         // var_dump($statuses);
+        // var_dump($images);
         return $this->render(array(
-            'statuses'  => $images,
+            'statuses'  => $statuses,
+        ));
+    }
+
+    //　文章の編集
+    function editingAction()
+    {
+        $status = $this->db_manager->get('Post')
+            ->fetchByIdAndUserName();
+        
+        return $this->render(array(
+            'statuses'  => $status,
         ));
     }
 }

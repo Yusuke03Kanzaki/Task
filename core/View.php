@@ -46,6 +46,7 @@ class View
         // print_r($_file);
         // print_r($this->base_dir);  //  /Applications/MAMP/htdocs/task/views　常にこれ？
         // print_r($_path);
+        // print_r($this->defaults);
 
         extract(array_merge($this->defaults, $_variables));
 
@@ -66,6 +67,7 @@ class View
             ));
         }
         // print_r($content);
+        // var_dump($content);
 
         return $content;
     }

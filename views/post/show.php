@@ -1,6 +1,3 @@
-  <!-- <?php $this->setLayoutVar('title', $status['user_name']) ?>
-  <?php echo $this->render('post/status', array('status' => $status)); ?> -->
-  
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('http://localhost/task/img/sample-post-bg.jpg')">
     <div class="overlay"></div>
@@ -34,6 +31,8 @@
           <p>Placeholder text by
             <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
             <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+          <button onclick="location.href='<?php echo $base_url; ?>/post/editing'"
+          class="btn btn-primary" id="sendMessageButton">EDITING</button>   <!-- 編集ページ -->
         </div>
       </div>
     </div>

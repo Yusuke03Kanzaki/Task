@@ -16,8 +16,8 @@ class MiniBlogApplication extends Application
                 =>array('controller' => 'post', 'action' => 'image'),
             '/post/upload'
                 =>array('controller' => 'post', 'action' => 'upload'),
-            // '/post/upload'
-            //     =>array('controller' => 'post', 'action' => 'upload'),
+            '/post/editing'
+                =>array('controller' => 'post', 'action' => 'editing'),
             '/'
                 =>array('controller' => 'post', 'action' => 'index'),
             '/post/about'

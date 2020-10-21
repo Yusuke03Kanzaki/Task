@@ -1,25 +1,28 @@
-<!-- Page Header -->
-<header class="masthead" style="background-image: url('../../img/image-bg.jpg')">
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('http://localhost/task/img/sample-post-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>Image List</h1>
-            <span class="subheading">Uploaded image.</span>
+          <div class="post-heading">
+            <h1><?php echo $this->escape($status['post_title']); ?></h1>
+            <h2><?php echo $this->escape($status['post_subtitle']); ?></h2>
+            <span class="meta">Posted by
+              <a href="#"><?php echo $this->escape($status['user_name']); ?></a>
+              on <?php echo $this->escape($status['created_at']); ?></span>
           </div>
         </div>
       </div>
     </div>
   </header>
+
   <!-- Main Content -->
-  </div>
+</div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-      <!-- <img src="data:<?php echo $statuses ?>;base64,<?php echo $img; ?> --> <!--画像を表示するためのコード上手くいかない -->
         <?php foreach ($statuses as $status): ?>
-              <?php echo $this->render('post/status_image', array('status' => $status)); ?>
+              <?php echo $this->render('post/status', array('status' => $status)); ?>
         <?php endforeach; ?>
         <div class="post-preview">
           <a href="<?php echo $base_url; ?>/post/sample">
