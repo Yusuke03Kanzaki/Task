@@ -1,15 +1,12 @@
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('http://localhost/task/img/sample-post-bg.jpg')">
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('../../img/about-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="post-heading">
-            <h1><?php echo $this->escape($status['post_title']); ?></h1>
-            <h2><?php echo $this->escape($status['post_subtitle']); ?></h2>
-            <span class="meta">Posted by
-              <a href="#"><?php echo $this->escape($status['user_name']); ?></a>
-              on <?php echo $this->escape($status['created_at']); ?></span>
+          <div class="page-heading">
+            <h1>Editing</h1>
+            <span class="subheading">Do you want to re-write the text?</span>
           </div>
         </div>
       </div>

@@ -31,8 +31,9 @@
           <p>Placeholder text by
             <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
             <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
-          <!-- <button onclick="location.href='<?php echo $base_url; ?>/post/editing'"
-          class="btn btn-primary" id="sendMessageButton">EDITING</button>   編集ページ -->
+          <form action="<?php echo $base_url; ?>/post/editing">
+              <input type="submit" name='name' value="編集">
+          </form>
           <form action="<?php echo $base_url; ?>/post/deletion">
               <input type="submit" name='name' value="削除">
           </form>
