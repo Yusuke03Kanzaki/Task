@@ -18,23 +18,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <?php foreach ($statuses as $status): ?>
-              <?php echo $this->render('post/status', array('status' => $status)); ?>
-        <?php endforeach; ?>
-        <div class="post-preview">
-          <a href="<?php echo $base_url; ?>/post/sample">
-            <h2 class="post-title">
-              Man must explore, and this is exploration at its greatest
-            </h2>
-            <h3 class="post-subtitle">
-              Problems look mighty small from 150 miles up
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 24, 2019</p>
-        </div>
-        <hr>
+      
+        <form method="post" action="<?php echo $base_url; ?>/post/change">
+        <?php $id; ?>
+        <textarea type='text' cols="60" rows="10" value="111" name="body"><?php foreach ($statuses as $status): ?> <?php echo $status; ?> <?php endforeach; ?></textarea>
+        <button type="submit" class="btn btn-primary" id="sendMessageButton">SEND</button> 
+          </form>
         <!-- Pager -->
         <div class="clearfix">
           <a class="btn btn-primary float-right" href="#">Older Posts</a>

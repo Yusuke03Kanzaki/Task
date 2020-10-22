@@ -20,6 +20,8 @@ class MiniBlogApplication extends Application
                 =>array('controller' => 'post', 'action' => 'editing'),
             '/post/deletion'
                 =>array('controller' => 'post', 'action' => 'deletion'),
+            '/post/change'
+                =>array('controller' => 'post', 'action' => 'change'),
             '/'
                 =>array('controller' => 'post', 'action' => 'index'),
             '/post/about'

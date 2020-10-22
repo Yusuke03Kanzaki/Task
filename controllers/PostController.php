@@ -166,10 +166,21 @@ class PostController extends Controller
     function editingAction()
     {
         $status = $this->db_manager->get('Post')
-            ->fetchByIdAndUserName();
+            ->editing();
+        
+        $id = $this->request->getReferer();
+
+        $count = strrpos($id, '/');
+    
+        $id = substr($id, $count + 1);
+        // var_dump($id);
+
+        // var_dump($status);
+        // echo $status;
         
         return $this->render(array(
             'statuses'  => $status,
+            'id' => $id,
         ));
     }
 
@@ -184,5 +195,34 @@ class PostController extends Controller
 
         $this->db_manager->get('Post')->deletion($id);
 
+    }
+
+    function changeAction()
+    {
+        if (!$this->request->isPost()) {
+            $this->forward404();
+        }
+
+        $id = $this->request->getReferer();
+
+        $count = strrpos($id, '/');
+
+        $id = substr($id, $count + 1);
+        var_dump($id);
+
+        $body = $this->request->getPost('body');
+        // var_dump($body);
+
+        $errors = array();
+
+        //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを PostRepository クラスの insert() メソッドに渡して保存しています。
+        $this->db_manager->get('Post')->change($body);
+
+        return $this->render(array(
+            'errors'   => $errors,
+            'body'     => $body,
+            // 'statuses' => $statuses,
+            '_token'   => $this->generateCsrfToken('post/post'),
+        )/*, 'index'*/);
     }
 }

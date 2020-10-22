@@ -22,6 +22,16 @@ class PostRepository extends DbRepository
         ));
     }
 
+    // 投稿内容の変更
+    function change($body, $id)
+    {
+        $sql = "
+            UPDATE post
+                SET body = $body
+                WHERE id = $id
+        ";
+    }
+
     // 画像の登録を行う
     function imageinsert($imgdat)
     {
@@ -108,6 +118,17 @@ class PostRepository extends DbRepository
                 WHERE id = $id
         ";
 
+        return $this->fetch($sql, array());
+    }
+
+    // 投稿を編集
+    function editing()
+    {
+        $sql = "
+            SELECT body
+                FROM post
+        ";
+        
         return $this->fetch($sql, array());
     }
 }
