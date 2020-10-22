@@ -100,7 +100,7 @@ class PostRepository extends DbRepository
     }
 
     // 投稿を削除
-    function deletion()
+    function deletion($id)
     {
         $sql = "
             DELETE
@@ -108,7 +108,7 @@ class PostRepository extends DbRepository
                 WHERE id = $id
         ";
 
-        return $this-> fetch($sql, array());
+        return $this->fetch($sql, array());
     }
 }
 

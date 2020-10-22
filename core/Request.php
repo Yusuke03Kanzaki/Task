@@ -144,4 +144,12 @@ class Request
 
         return $path_info;
     }
+
+    // 一つ前のページのurlを取得
+    function getReferer()
+    {
+        $id = $_SERVER['HTTP_REFERER'];
+
+        return $id;
+    }
 }

@@ -167,15 +167,22 @@ class PostController extends Controller
     {
         $status = $this->db_manager->get('Post')
             ->fetchByIdAndUserName();
-        var_dump($status);
         
         return $this->render(array(
             'statuses'  => $status,
         ));
     }
 
+    // 削除
     function deletionAction()
     {
-        $this->db_manager->get('Post')->deletion
+        $id = $this->request->getReferer();
+
+        $count = strrpos($id, '/');
+
+        $id = substr($id, $count + 1);
+
+        $this->db_manager->get('Post')->deletion($id);
+
     }
 }

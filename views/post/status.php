@@ -11,8 +11,5 @@
           <p class="post-meta">Posted by
             <a href="#"> <?php echo $this->escape($status['user_name']); ?> </a>
             on <?php echo $this->escape($status['created_at']); ?></p>
-          <form action="<?php echo $base_url; ?>/post/deletion">
-              <input type="submit" name='name' value="削除">
-          </form>
         </div>
         <hr>
