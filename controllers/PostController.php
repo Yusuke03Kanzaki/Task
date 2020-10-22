@@ -208,7 +208,7 @@ class PostController extends Controller
         
         session_start();
         $id = $_SESSION['id'];
-        var_dump($id);
+        // var_dump($id);
   
 
         $body = $this->request->getPost('body');

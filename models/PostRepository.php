@@ -26,10 +26,24 @@ class PostRepository extends DbRepository
     function change($body, $id)
     {
         $sql = "
-            UPDATE post
-                SET body = $body
+            UPDATE post 
+            SET body = $body
+            WHERE id = $id
+        ";
+
+        return $this->fetchAll($sql, array());
+    }
+
+    // 投稿を削除
+    function deletion($id)
+    {
+        $sql = "
+            DELETE
+                FROM post
                 WHERE id = $id
         ";
+
+        return $this->fetch($sql, array());
     }
 
     // 画像の登録を行う
@@ -107,18 +121,6 @@ class PostRepository extends DbRepository
         ";
 
         return $this->fetchAll($sql, array());
-    }
-
-    // 投稿を削除
-    function deletion($id)
-    {
-        $sql = "
-            DELETE
-                FROM post
-                WHERE id = $id
-        ";
-
-        return $this->fetch($sql, array());
     }
 
     // 投稿を編集
