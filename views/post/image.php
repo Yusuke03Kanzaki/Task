@@ -17,10 +17,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-      <!-- <img src="data:<?php echo $statuses ?>;base64,<?php echo $img; ?> --> <!--画像を表示するためのコード上手くいかない -->
-        <?php foreach ($statuses as $status): ?>
-              <?php echo $this->render('post/status_image', array('status' => $status)); ?>
-        <?php endforeach; ?>
+        <div>
+            <?php header("Content-Type: image/jpeg") ?>
+            <?php echo $statuses ?>
+        </div>
         <div class="post-preview">
           <a href="<?php echo $base_url; ?>/post/sample">
             <h2 class="post-title">
@@ -42,3 +42,8 @@
       </div>
     </div>
   </div>
+
+<!-- 
+  <?php foreach ($statuses as $status): ?>
+                        <?php echo $this->render('post/status_image', array('status' => $status)); ?>
+        <?php endforeach; ?> -->

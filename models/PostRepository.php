@@ -98,6 +98,18 @@ class PostRepository extends DbRepository
 
         return $this->fetchAll($sql, array());
     }
+
+    // 投稿を削除
+    function deletion()
+    {
+        $sql = "
+            DELETE
+                FROM post
+                WHERE id = $id
+        ";
+
+        return $this-> fetch($sql, array());
+    }
 }
 
     
