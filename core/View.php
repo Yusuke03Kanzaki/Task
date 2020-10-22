@@ -53,6 +53,7 @@ class View
         ob_start();
         ob_implicit_flush(0);
 
+        var_dump($_file);
         require $_file;
         // echo 222;
 

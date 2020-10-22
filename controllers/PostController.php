@@ -192,31 +192,32 @@ class PostController extends Controller
         $count = strrpos($id, '/');
 
         $id = substr($id, $count + 1);
+        session_start();  
+        $_SESSION['id'] = $id;  //idをスーパーグローバル変数で取得。編集の際に渡す 
 
         $this->db_manager->get('Post')->deletion($id);
 
     }
 
+    // 文章書き換え
     function changeAction()
     {
         if (!$this->request->isPost()) {
             $this->forward404();
         }
-
-        $id = $this->request->getReferer();
-
-        $count = strrpos($id, '/');
-
-        $id = substr($id, $count + 1);
+        
+        session_start();
+        $id = $_SESSION['id'];
         var_dump($id);
+  
 
         $body = $this->request->getPost('body');
-        // var_dump($body);
+        // // var_dump($body);
 
         $errors = array();
 
         //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを PostRepository クラスの insert() メソッドに渡して保存しています。
-        $this->db_manager->get('Post')->change($body);
+        $this->db_manager->get('Post')->change($body, $id);
 
         return $this->render(array(
             'errors'   => $errors,
