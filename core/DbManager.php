@@ -89,19 +89,14 @@ class DbManager
      */
     public function get($repository_name)
     {
-        // print_r($repository_name);
         if (!isset($this->repositories[$repository_name])) {
             $repository_class = $repository_name . 'Repository';
-            // print_r($repository_class);
             $con = $this->getConnectionForRepository($repository_name);
-            // print_r($con);
 
             $repository = new $repository_class($con);
-            // print_r($repository);
 
             $this->repositories[$repository_name] = $repository;
         }
-        // print_r($this->repositories[$repository_name]);
 
         return $this->repositories[$repository_name];
     }

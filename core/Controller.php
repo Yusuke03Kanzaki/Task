@@ -72,6 +72,7 @@ abstract class Controller
      */
     protected function render($variables = array(), $template = null, $layout = 'layout')
     {
+        // echo 111;
         $defaults = array(
             'request'  => $this->request,
             'base_url' => $this->request->getBaseUrl(),

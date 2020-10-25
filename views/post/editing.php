@@ -27,8 +27,8 @@
         <button type="submit" class="btn btn-primary" id="sendMessageButton">SEND</button> 
           </form>
         <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts</a>
+        <!-- <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts</a> -->
         </div>
       </div>
     </div>

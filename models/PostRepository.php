@@ -27,11 +27,12 @@ class PostRepository extends DbRepository
     {
         $sql = "
             UPDATE post 
-            SET body = $body
+            SET body = '$body'
             WHERE id = $id
         ";
+        // echo $sql;
 
-        return $this->fetchAll($sql, array());
+        return $this->execute($sql, array());
     }
 
     // 投稿を削除
@@ -43,7 +44,7 @@ class PostRepository extends DbRepository
                 WHERE id = $id
         ";
 
-        return $this->fetch($sql, array());
+        return $this->execute($sql, array());
     }
 
     // 画像の登録を行う

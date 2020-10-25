@@ -110,7 +110,7 @@ class PostController extends Controller
         )/*, 'index'*/);
     }
 
-    //　画像投稿
+    //　画像投稿 表示
     function uploadAction()
     {
         // echo 111;
@@ -133,18 +133,25 @@ class PostController extends Controller
         //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを PostRepository クラスの insert() メソッドに渡して保存しています。
         $this->db_manager->get('Post')->imageinsert($imgdat);
 
+        // echo 111;
         // 画像データ取得
-        $image = $this->db_manager->get('Post')->fetchImage();
+        $img = $this->db_manager->get('Post')->fetchImage();
+        $image = $img[0]['image'];
+        // var_dump($image);
+        // $images = htmlspecialchars($image);
+        $images = base64_encode($image);
+        // print_r($images);
 
-        echo $image;
+        // echo '<img src="$images">';
 
+        // var_dump($image);
         // $result = mysql_query($sql, $dbLink);
         // $row = mysql_fetch_row($result);
+        // echo 111;
 
         return $this->render(array(
+            'images' => $images,
         ));
-
-
     }
 
     //画像一覧表示
@@ -173,14 +180,38 @@ class PostController extends Controller
         $count = strrpos($id, '/');
     
         $id = substr($id, $count + 1);
-        // var_dump($id);
+        // print_r($id);
+        // session_destroy();
 
-        // var_dump($status);
-        // echo $status;
+        $_SESSION['id'] = $id;
+        // print_r($_SESSION);
+
+        // $this->storageAction($id);
         
         return $this->render(array(
             'statuses'  => $status,
             'id' => $id,
+        ));
+    }
+
+    // 文章書き換え
+    function changeAction()
+    {
+        if (!$this->request->isPost()) {
+            $this->forward404();
+        }
+        session_start();
+        $id = $_SESSION['id'];
+
+        $body = $this->request->getPost('body');
+
+        $errors = array();
+
+        //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを PostRepository クラスの insert() メソッドに渡して保存しています。
+        $this->db_manager->get('Post')->change($body, $id);
+
+        return $this->render(array(
+      
         ));
     }
 
@@ -192,38 +223,14 @@ class PostController extends Controller
         $count = strrpos($id, '/');
 
         $id = substr($id, $count + 1);
-        session_start();  
-        $_SESSION['id'] = $id;  //idをスーパーグローバル変数で取得。編集の際に渡す 
 
         $this->db_manager->get('Post')->deletion($id);
 
-    }
-
-    // 文章書き換え
-    function changeAction()
-    {
-        if (!$this->request->isPost()) {
-            $this->forward404();
-        }
-        
-        session_start();
-        $id = $_SESSION['id'];
-        // var_dump($id);
-  
-
-        $body = $this->request->getPost('body');
-        // // var_dump($body);
-
-        $errors = array();
-
-        //  保存処理です。セッションからユーザ情報を取得し、ユーザの id と投稿された データを PostRepository クラスの insert() メソッドに渡して保存しています。
-        $this->db_manager->get('Post')->change($body, $id);
+        // return $this->render(array(
+        // ));
 
         return $this->render(array(
-            'errors'   => $errors,
-            'body'     => $body,
-            // 'statuses' => $statuses,
-            '_token'   => $this->generateCsrfToken('post/post'),
-        )/*, 'index'*/);
+      
+        ));
     }
 }

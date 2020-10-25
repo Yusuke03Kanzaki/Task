@@ -60,9 +60,18 @@ abstract class DbRepository
      */
     public function fetch($sql, $params = [])
     {
-        // echo 333;
+        // print_r($sql);
+        // print_r($params);
+        // print_r($this->execute($sql, $params));
+        // var_dump($this->execute($sql, $params)->fetch(PDO::FETCH_ASSOC));
+        // return $this->execute($sql, $params);
         return $this->execute($sql, $params)->fetch(PDO::FETCH_ASSOC);
     }
+
+    // function execute($sql, $params = [])
+    // {
+    //     return $this->execute($sql, $params);
+    // }
 
 
     /**
